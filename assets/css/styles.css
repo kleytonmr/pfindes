@@ -312,7 +312,7 @@ a {
 .cc-regua-grande {
   background: #fff;
   border-radius: 4px;
-  height: 175px;
+  height: 160px;
   padding: 0px 30px;
 }
 
@@ -774,7 +774,9 @@ a {
     text-align: center;
     padding: 3px;
     color: #fff;
-    font-size: 13px;
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
     font-family: Roboto, sans-serif;
     top: 36px;
     width: 100px;
@@ -1054,13 +1056,14 @@ a {
 }
 
 .cc-como-funciona {
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .cc-como-funciona .cc-figure {
-  padding-top: 60px;
+  padding-top: 15px;
   float: left;
   max-width: 200px;
+  margin-right: 25px;
 }
 
 @media (min-width: 576px) {
@@ -1084,8 +1087,6 @@ a {
   color: #2A3091;
   font-weight: 200;
   text-align: justify;
-  padding-top: 10px;
-  margin-left: -10px;
   line-height: 25px;
   font-family: Roboto, sans-serif;
   margin-left: 40px;
@@ -1094,13 +1095,11 @@ a {
 .cc-box-clusters .cc-box-cluster .cc-titulo {
   float: left;
   background-color: #fff;
-  padding-right: 10px;
-  padding-left: 10px;
   font-size: 14px;
   text-transform: uppercase;
   color: #2A3091;
   font-weight: 300;
-  padding: 10px;
+  padding: 10px 20px 0px 20px;
   font-family: Roboto, sans-serif;
 }
 
@@ -1131,6 +1130,7 @@ a {
 .cc-box-clusters .cc-box-cluster .cc-content-cluster {
   background-color: #f3f3f3;
   margin: 20px 15px;
+  padding: 10px 0px;
   border-radius: 5px;
   color: #666666;
   font-family: Roboto, sans-serif;
@@ -1252,7 +1252,7 @@ a {
 .cc-section-borda .col-6 {
   padding: 0;
   border-right: 5px solid #2d3091;
-  height: 60px;
+  height: 40px;
   margin: 0;
 }
 
@@ -1682,6 +1682,7 @@ a {
     text-align: left;
     line-height: 40px;
     letter-spacing: -0.4px;
+    margin-bottom: 20px;
   }
 }
 
@@ -5612,13 +5613,14 @@ sidebar {
   line-height: 16px;
   text-align: left;
   letter-spacing: -0.5px; 
+  padding: 10px 10px 5px 10px;
 }
 
 .cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group li:before{
   content: "";
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   background-color: #848484;
   position: absolute;
   left: 0;
