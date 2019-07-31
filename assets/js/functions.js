@@ -1,7 +1,8 @@
 
 function getMunicipiosJson (callback) {
-  $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
-    function (data) {
+  //$.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
+  $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/developer/munic/banco.min.json",  
+  function (data) {
       callback(data.municipios);
     });
 }
