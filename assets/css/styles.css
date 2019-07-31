@@ -7,10 +7,6 @@
   white-space: nowrap;
 }
 
-a {
-  text-decoration: none !important;
-}
-
 /*@media (min-width: 576px) {*/
   .cc-titulo-principal {
     font-family: Roboto, sans-serif;
@@ -21,6 +17,10 @@ a {
     white-space: nowrap;
   }
 /*}*/
+
+a {
+  text-decoration: none !important;
+}
 
 .cc-titulo-principal span {
   font-weight: 700;
