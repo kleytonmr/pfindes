@@ -1,7 +1,3 @@
-a {
-  text-decoration: none !important;
-}
-
 .cc-titulo-principal {
   font-family: Roboto, sans-serif;
   font-weight: 300;
@@ -9,6 +5,10 @@ a {
   text-transform: uppercase;
   color: #2A3091;
   white-space: nowrap;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 /*@media (min-width: 576px) {*/
