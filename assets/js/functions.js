@@ -270,6 +270,7 @@ function clickFilterMap(idMunicipio) {
 }
 
 function setEstadualMapValues(municipio) {
+  console.log(municipio.pos_ian);
   if (municipio) {
 
     //  variável: ian
@@ -529,6 +530,7 @@ function buildCategoriesSliderRuler(keyName) {
         'min': [0.0],
         'max': [10.0]
       }
+      
     });
 
     slider.setAttribute('disabled', true);
