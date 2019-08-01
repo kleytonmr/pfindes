@@ -1623,12 +1623,10 @@ a {
 
 #cc-section-ian .cc-titulo-ian {
   font-weight: 900;
-  font-size: 20px;
-  text-align: center;
+  font-size: 18px;
   color: rgb(42, 48, 145);
   text-transform: uppercase;
   font-family: Roboto, sans-serif;
-  text-align: center;
 }
 
 @media (min-width: 576px) {
@@ -1646,7 +1644,7 @@ a {
 @media (min-width: 768px) {
   #cc-section-ian .cc-titulo-ian {
     font-weight: 900;
-    font-size: 26px;
+    font-size: 24px;
     text-align: center;
     color: rgb(42, 48, 145);
     text-transform: uppercase;
@@ -1660,7 +1658,7 @@ a {
 @media (min-width: 992px) {
   #cc-section-ian .cc-titulo-ian {
     font-weight: 900;
-    font-size: 34px;
+    font-size: 32px;
     text-align: center;
     color: rgb(42, 48, 145);
     text-transform: uppercase;
@@ -1674,7 +1672,7 @@ a {
 @media (min-width: 1200px) {
   #cc-section-ian .cc-titulo-ian {
     font-weight: 900;
-    font-size: 41px;
+    font-size: 40px;
     text-align: center;
     color: rgb(42, 48, 145);
     text-transform: uppercase;
@@ -1794,9 +1792,9 @@ a {
   .cc-img-linhaPonto {
     position: absolute;
     left: 152px;
-    top: -212px;
+    top: -196px;
     opacity: 1;
-    height: 984px;
+    height: 850px;
     width: 426px;
     display: block;
   }
@@ -2220,6 +2218,7 @@ a {
   text-transform: uppercase;
   border-top: 1px solid #fff;
   padding-top: 15px;
+  margin-top: 5px;
 }
 
 @media (min-width: 576px) {
@@ -2291,6 +2290,7 @@ a {
   font-family: Roboto, sans-serif;
   font-size: 11px;
   color: #fff;
+  top: -10px;
 }
 
 @media (min-width: 576px) {
