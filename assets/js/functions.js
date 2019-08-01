@@ -680,8 +680,8 @@ function buildMediaSliderRulers() {
     municipio.innerHTML = "Vitória";
     municipio.setAttribute('data-municipio', 'Vitória');
 
-    media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
-    municipio.classList.add('cc-legenda-cluster', 'cc-cor-marrom', 'cc-municipio');
+    media.classList.add('cc-legenda-cluster-painel-2', 'cc-cor-cinza-painel-2');
+    municipio.classList.add('cc-legenda-cluster-painel-2', 'cc-cor-marrom-painel-2', 'cc-municipio');
 
     var selector = '#' + id + ' .noUi-handle';
 
