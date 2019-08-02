@@ -344,6 +344,14 @@ a {
   top: -30px;
 }
 
+#slider_infra_media .cc-color-cinza.cc-valor, #slider_pmercado_media .cc-color-cinza.cc-valor, #slider_chumano_media .cc-color-cinza.cc-valor, #slider_gfiscal_media .cc-color-cinza.cc-valor {
+  top: 8px;
+}
+
+#slider_infra_media .cc-color-marrom.cc-valor, #slider_pmercado_media .cc-color-marrom.cc-valor, #slider_chumano_media .cc-color-marrom.cc-valor, #slider_gfiscal_media .cc-color-marrom.cc-valor {
+  top: -30px;
+}
+
 .cc-valor-municipio {
   top: -65px;
 }
@@ -458,6 +466,10 @@ a {
   top: -72px !important;
 }
 
+#slider_infra_media .cc-municipio, #slider_pmercado_media .cc-municipio, #slider_chumano_media .cc-municipio, #slider_gfiscal_media .cc-municipio {
+  top: -90px !important;
+}
+
 .cc-regua .cc-legenda-cluster.cc-municipio {
   border-radius: 4px;
   position: relative;
@@ -548,6 +560,23 @@ a {
     left: -24px;
     /*top: -104px*/
   }
+}
+
+#slider_infra_media .cc-legenda-cluster.cc-municipio {
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 3px 0px;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -24px;
+  /*top: -104px !important;*/
 }
 
 .cc-regua .cc-legenda-cluster:before {
@@ -649,6 +678,24 @@ a {
   }
 }
 
+#slider_infra_media .cc-legenda-cluster.cc-cor-marrom:after, #slider_pmercado_media .cc-legenda-cluster.cc-cor-marrom:after, #slider_chumano_media .cc-legenda-cluster.cc-cor-marrom:after, #slider_gfiscal_media .cc-legenda-cluster.cc-cor-marrom:after{
+  bottom: -44px !important;
+}
+
+#slider_infra_media .cc-legenda-cluster.cc-cor-cinza:after, #slider_pmercado_media .cc-legenda-cluster.cc-cor-cinza:after, #slider_chumano_media .cc-legenda-cluster.cc-cor-cinza:after, #slider_gfiscal_media .cc-legenda-cluster.cc-cor-cinza:after{
+  bottom: 67px !important;
+}
+
+#slider_infra_media .cc-legenda-cluster:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: 47%;
+}
+
 .cc-regua .cc-legenda-cluster.cc-municipio:after {
   content: "";
   display: block;
@@ -662,23 +709,6 @@ a {
 
 .cc-cor-marrom:after {
   bottom: -46px;
-}
-
-.cc-legenda-cluster-painel-2{
-border-radius: 4px;
-    position: relative;
-    text-align: center;
-    padding: 3px;
-    color: #fff;
-    font-family: Roboto, sans-serif;
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: -19px;
-  }
-.cc-cor-marrom-painel-2:after {
-  bottom: -26px;
 }
 
 .cc-cor-cinza:after, .cc-cor-roxo:after {
@@ -1069,6 +1099,13 @@ border-radius: 4px;
   padding-top: 20px;
 }
 
+.cc-como-funciona br, .texto_box_branco br, .texto_box_cinza br, #texto_tx_conexao br {
+  content: "";
+  margin: 2em;
+  display: block;
+  font-size: 50%;
+}
+
 .cc-como-funciona .cc-figure {
   padding-top: 15px;
   float: left;
@@ -1094,12 +1131,16 @@ border-radius: 4px;
 .cc-como-funciona .texto1,
 .cc-como-funciona .texto2  {
   font-size: 18px;
-  color: #2A3091;
+  color: #666666;
   font-weight: 200;
   text-align: justify;
   line-height: 25px;
   font-family: Roboto, sans-serif;
   margin-left: 40px;
+}
+
+.texto_lista {
+  color: #2A3091;
 }
 
 .cc-box-clusters .cc-box-cluster .cc-titulo {
@@ -1240,6 +1281,7 @@ border-radius: 4px;
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
   font-style: italic;
+  margin-top: 20px;
 }
 
 .cc-section-select {
@@ -2670,7 +2712,11 @@ border-radius: 4px;
   text-transform: uppercase;
   line-height: 30px;
   font-weight: 300;
-  margin: 20px 0;
+  margin: 5px 0;
+}
+
+.tab-content {
+  margin-top: 15px;
 }
 
 .cc-div-categorias .cc-titulo-padrao {
@@ -4688,6 +4734,15 @@ border-radius: 4px;
   padding-top: 40px;
   margin-top: 40px;
 }
+
+/*.cc-box-entre-em-contato .cc-box-pdf::after {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0.2px;
+  border-top: .8px solid #5379ba;
+  content: '';
+}*/
 
 .cc-como-funciona ul li:nth-child(1), .cc-como-funciona ul li:nth-child(2), .cc-como-funciona ul li:nth-child(3) {
   list-style: none;
