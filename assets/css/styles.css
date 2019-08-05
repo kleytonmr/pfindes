@@ -1099,7 +1099,7 @@ a {
   padding-top: 20px;
 }
 
-.cc-como-funciona br, .texto_box_branco br, .texto_box_cinza br, #texto_tx_conexao br {
+.cc-como-funciona br, .texto_box_branco br, .texto_box_cinza br, .cc-acordion-conteudo .cc-conteudo br {
   content: "";
   margin: 2em;
   display: block;
