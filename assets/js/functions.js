@@ -657,7 +657,7 @@ function buildMediaSliderRulers() {
     'slider_chumano_media',
     'slider_gfiscal_media'
   ]
-
+//início da terceira régua
   $(sliderIds).each(function (i, id) {
     var slider = document.getElementById(id);
 
