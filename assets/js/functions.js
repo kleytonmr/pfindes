@@ -115,9 +115,9 @@ function populeMunicipioData(idMunicipio) {
     var municipio = data.find(obj => {
       return obj.key === idMunicipio
     });
-    console.log(data)
+    console.log(data);
     if (municipio) {
-      // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
+      $('img#img_cidade').attr("src","assets/img/imagem-" + municipio.key + ".jpg");
       populateMainRulerValues(municipio);
 
       var keys = Object.keys(municipio);
@@ -493,6 +493,28 @@ function populateTexts(data) {
   var texto1 = $('.texto1');
   var texto2 = $('.texto2');
 
+  var pop = $('.pop');
+  var idhm = $('.idhm');
+  var pib = $('.pib');
+
+  var pop_formatado = municipio['pop'];
+  var idhm_formatado = municipio['idhm'];
+  var pib_formatado = municipio['pib'];
+
+  pop_formatado = parseFloat(pop_formatado).toFixed(0);
+  idhm_formatado = parseFloat(idhm_formatado).toFixed(2);
+  pib_formatado = parseFloat(pib_formatado).toFixed(0);
+
+  //substitui os pontos por vírgulas
+  idhm_formatado = idhm_formatado.replace('.',',');
+
+  //põe a variável população na página
+  pop.html(pop_formatado);
+  //põe a variável idhm na página
+  idhm.html(idhm_formatado);
+  //põe a variável pib na página
+  pib.html(pib_formatado);
+
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
     texto1.html(municipio['texto1_ian']);
@@ -674,8 +696,7 @@ function buildMediaSliderRulers() {
 
     var media = document.createElement('span');
     media.className = "op_selectedValueRadio";
-    media.innerHTML = "Média do Cluster";
- 
+    media.innerHTML = "Média do Cluster"; 
 
     var municipio = document.createElement('span');
     municipio.innerHTML = "Vitória";

@@ -3022,6 +3022,8 @@ a {
   border-bottom: 0;
   background-color: #fff;
   margin: 0;
+  width: 330px;
+  height: 250px;
 }
 
 .cc-box-galeria .cc-box-img-conteudo {
@@ -5659,4 +5661,10 @@ sidebar {
   left: 0;
   top: 15px;
   border-radius: 50%;
+}
+
+#img_cidade {
+  width:100%; 
+  height:100%; 
+  object-fit:cover; 
 }
