@@ -1,3 +1,4 @@
+var municipio_nome;
 function getMunicipiosJson (callback) {
   //$.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
   $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/developer/munic/banco.min.json",
@@ -17,9 +18,9 @@ function initMunicipioSelect(data) {
 
 function initClusterMap(idMunicipio) {
 
-  var munic_current = idMunicipio
+  var munic_current = municipio_nome = idMunicipio;
   if (!munic_current) return;
-
+  
   // selectMunicipioOption(munic_current);
   // populeMunicipioData(munic_current);
 
@@ -115,7 +116,7 @@ function populeMunicipioData(idMunicipio) {
     var municipio = data.find(obj => {
       return obj.key === idMunicipio
     });
-    console.log(data);
+    
     if (municipio) {
       $('img#img_cidade').attr("src","assets/img/imagem-" + municipio.key + ".jpg");
       populateMainRulerValues(municipio);
@@ -969,7 +970,6 @@ $(document).on('click', '#card-infraEstrutura', function(event) {
 
 });
 
-
 $(document).on('click', '#radio #option1', function(event) {
     $("label#label1").addClass("active");
     $("label#label2").removeClass("active");
@@ -987,3 +987,59 @@ $(document).on('click', '#radio #option3', function(event) {
     $("label#label2").removeClass("active");
     $("label#label1").removeClass("active");
 });
+
+// função para capturar o envio do formulário e liberar os arquivos para download
+function submit_doc_form() {
+  var nome = document.getElementById("doc_form_nome").value;
+  var email = document.getElementById("doc_form_email").value;
+  var telefone = document.getElementById("doc_form_telefone").value;
+
+if (validation()) // chama a função de validação do formulário
+  {
+  var getClassDocIconForm = document.getElementsByClassName("doc-icon");
+  var getClassDocLinks = document.getElementsByClassName("cc-link-box-conteudo");
+
+  for (var i = 0; i < getClassDocIconForm.length; i++) {
+
+    getClassDocIconForm[i].src = "assets/img/pdf-icon.png";
+
+    switch (getClassDocLinks[i].id) {
+      case "doc-link-fichamento" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-fichamento-dos-indicadores.pdf";
+        break;
+        case "doc-link-referencial" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-referencial-teorico-estatistico.pdf";
+        break;
+        case "doc-link-relatorio-tecnico-analise" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-relatorio-tecnico-analise-dos-resultados.pdf";
+        break;
+        case "doc-link-base-dados" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-base-de-dados.pdf";
+        break;
+        case "doc-link-diagnostico-personalizado" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-diagnostico-personalizado-de-"+municipio_nome+".pdf";
+        break;
+    }
+  }
+
+  //document.getElementById("doc_form").submit(); //disparo do form caso esteja tudo correto  
+  }
+}
+
+// função pra validar email e nome
+function validation() {
+  var nome = document.getElementById("doc_form_nome").value;
+  var email = document.getElementById("doc_form_email").value;
+  //var emailReg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
+
+  if (nome === '' || email === '') {
+  //nome ou email vazios
+  return false;
+  //} else if (!(email).match(emailReg)) {
+  //email inválido
+  //alert("email inválido")
+  //return false; //se estiver algo errado
+  } else {
+  return true; //se estiver tudo certo
+  }
+}

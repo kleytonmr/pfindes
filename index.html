@@ -3596,7 +3596,7 @@
                 </div>
                 <div class="col-lg-7">
                   <div class="cc-box-entre-em-contato">
-                    <h1 class="cc-titulo">CADASTRE E RECEBA OS DOCUMENTOS ABAIXO:<br></h1>
+                    <h1 class="cc-titulo">CADASTRE E ACESSE OS DOCUMENTOS ABAIXO:<br></h1>
                     <!--
                       <p class="cc-paragrafo">Para receber a base de dados completa dos indicadores por município, um
                       dashboard padronizado da realidade sobre ambiente de negócios de seu município e o banco completo
@@ -3606,10 +3606,10 @@
                     <div class="cc-box-pdf">
                       <div class="row">
                         <div class="col-sm-6">
-                          <a class="cc-link-box-conteudo" href="#">
+                          <a class="cc-link-box-conteudo" id="doc-link-fichamento">
                             <div class="cc-box-conteudo">
                               <div class="row">
-                                <div class="col-2"><img src="assets/img/pdf-icon.png"></div>
+                                <div class="col-2"><img class="doc-icon" src="assets/img/lock-pdf-icon.png"></div>
                                 <div class="col-10">
                                   <p>Fichamento dos indicadores</p>                                  
                                 </div>
@@ -3618,10 +3618,10 @@
                           </a>
                         </div>
                         <div class="col-sm-6">
-                          <a class="cc-link-box-conteudo" href="#">
+                          <a class="cc-link-box-conteudo" id="doc-link-referencial">
                             <div class="cc-box-conteudo">
                               <div class="row">
-                                <div class="col-2"><img src="assets/img/pdf-icon.png"></div>
+                                <div class="col-2"><img class="doc-icon" src="assets/img/lock-pdf-icon.png"></div>
                                 <div class="col-10">
                                   <p>Referencial teórico e estatístico</p>
                                 </div>
@@ -3630,10 +3630,10 @@
                           </a>
                         </div>
                         <div class="col-sm-6">
-                          <a class="cc-link-box-conteudo" href="#">
+                          <a class="cc-link-box-conteudo" id="doc-link-relatorio-tecnico-analise">
                             <div class="cc-box-conteudo">
                               <div class="row">
-                                <div class="col-2"><img src="assets/img/pdf-icon.png"></div>
+                                <div class="col-2"><img class="doc-icon" src="assets/img/lock-pdf-icon.png"></div>
                                 <div class="col-10">
                                   <p>Relatório técnico-análise dos resultados</p>
                                 </div>
@@ -3642,10 +3642,10 @@
                           </a>
                         </div>
                         <div class="col-sm-6">
-                          <a class="cc-link-box-conteudo" href="#">
+                          <a class="cc-link-box-conteudo" id="doc-link-base-dados">
                             <div class="cc-box-conteudo">
                               <div class="row">
-                                <div class="col-2"><img src="assets/img/pdf-icon.png"></div>
+                                <div class="col-2"><img class="doc-icon" src="assets/img/lock-pdf-icon.png"></div>
                                 <div class="col-10">
                                   <p>Base de dados</p>
                                 </div>
@@ -3654,12 +3654,12 @@
                           </a>
                         </div>
                         <div class="col-sm-6">
-                          <a class="cc-link-box-conteudo" href="#">
+                          <a class="cc-link-box-conteudo" id="doc-link-diagnostico-personalizado">
                             <div class="cc-box-conteudo">
                               <div class="row">
-                                <div class="col-2"><img src="assets/img/pdf-icon.png"></div>
+                                <div class="col-2"><img class="doc-icon" src="assets/img/lock-pdf-icon.png"></div>
                                 <div class="col-10">
-                                  <p>Diagnóstico personalizado sobre o ambiente de negócios do município de Vitória</p>
+                                  <p>Diagnóstico personalizado sobre o ambiente de negócios de <span style="color: #009fe3;"><b>"<span id="doc-pdf-municipio" >Vitória</span>"</b></span></p>
                                 </div>
                               </div>
                             </div>
@@ -3669,17 +3669,26 @@
                       </div>
                     </div>
 
-                    <form class="cc-formulario form-horizontal" action="&quot;&quot;" method="post">
-                      <div class="form-group row"><label class="col-3">Nome:</label>
-                        <div class="col-9"><input class="form-control" type="text" name="nome"></div>
+                    <form id="doc_form" class="cc-formulario form-horizontal" action="#" method="post">
+                      <div class="form-group row">
+                        <label class="col-3">Nome:</label>
+                        <div class="col-9">
+                          <input class="form-control" type="text" id="doc_form_nome" name="nome">
+                        </div>
                       </div>
-                      <div class="form-group row"><label class="col-3">E-mail:</label>
-                        <div class="col-9"><input class="form-control" type="email" name="email"></div>
+                      <div class="form-group row">
+                        <label class="col-3">E-mail:</label>
+                        <div class="col-9">
+                          <input class="form-control" type="email" id="doc_form_email" name="email">
+                        </div>
                       </div>
                       <div class="form-group row"><label class="col-3">Telefone:</label>
-                        <div class="col-9 col-md-6"><input class="form-control" type="tel" name="telefone"></div>
-                        <div class="col-sm-12 col-md-3"><button class="btn btn-primary cc-submit"
-                            type="button">Enviar</button></div>
+                        <div class="col-9 col-md-6">
+                          <input class="form-control" type="tel" id="doc_form_telefone" name="telefone">
+                        </div>
+                        <div class="col-sm-12 col-md-3">
+                          <button onclick="submit_doc_form()" class="btn btn-primary cc-submit" type="button">Baixar</button>
+                        </div>
                       </div>
                     </form>
 
