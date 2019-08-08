@@ -1,4 +1,5 @@
 var municipio_nome;
+var preencherForm = false;
 function getMunicipiosJson (callback) {
   //$.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
   $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/developer/munic/banco.min.json",
@@ -119,6 +120,12 @@ function populeMunicipioData(idMunicipio) {
     
     if (municipio) {
       $('img#img_cidade').attr("src","assets/img/imagem-" + municipio.key + ".jpg");
+      $('span#doc-pdf-municipio').html(municipio.munic);
+
+      if(preencherForm){
+        var getClassDocLinks = document.getElementsByClassName("cc-link-box-conteudo"); 
+        getClassDocLinks[4].href = "assets/documentos/ideies-documento-diagnostico-personalizado-de-"+municipio.key+".pdf";
+      }
       populateMainRulerValues(municipio);
 
       var keys = Object.keys(municipio);
@@ -990,22 +997,28 @@ $(document).on('click', '#radio #option3', function(event) {
 
 // função para capturar o envio do formulário e liberar os arquivos para download
 function submit_doc_form() {
+
   var nome = document.getElementById("doc_form_nome").value;
   var email = document.getElementById("doc_form_email").value;
   var telefone = document.getElementById("doc_form_telefone").value;
 
 if (validation()) // chama a função de validação do formulário
   {
+  preencherForm = true;
   var getClassDocIconForm = document.getElementsByClassName("doc-icon");
-  var getClassDocLinks = document.getElementsByClassName("cc-link-box-conteudo");
+  var getClassDocLinks = document.querySelectorAll('.cc-link-box-conteudo');
+  var getTextDocLinks = document.querySelectorAll('.pdf-text');
 
   for (var i = 0; i < getClassDocIconForm.length; i++) {
 
+    getClassDocIconForm[i].classList.add("flip-vertical-left");
     getClassDocIconForm[i].src = "assets/img/pdf-icon.png";
+    getClassDocIconForm[i].style.opacity = '1';
+    getTextDocLinks[i].style.color = '#fff';
 
     switch (getClassDocLinks[i].id) {
       case "doc-link-fichamento" :
-          getClassDocLinks[i].href = "assets/documentos/ideies-documento-fichamento-dos-indicadores.pdf";
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-fichamento-dos-indicadores.pdf";          
         break;
         case "doc-link-referencial" :
           getClassDocLinks[i].href = "assets/documentos/ideies-documento-referencial-teorico-estatistico.pdf";
