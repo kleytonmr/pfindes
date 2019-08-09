@@ -257,20 +257,22 @@ function clickFilterMap(idMunicipio) {
       var selectedValueRadio = $("input[name='options']:checked").val();
       var getClassSelectedValueRadio = document.getElementsByClassName("op_selectedValueRadio");
 
-      if (selectedValueRadio === 'cluster') {
-        // cluster        
-        getClassSelectedValueRadio[0].innerHTML = "Média do Cluster";
-        setClusterMapValues(municipio);
+      for (var i = 0; i < 4; i++) {
+        if (selectedValueRadio === 'cluster') {
+          // cluster        
+          getClassSelectedValueRadio[i].innerHTML = "Média do Cluster";
+          setClusterMapValues(municipio);
 
-      } else if (selectedValueRadio === 'regional') {
-        // regional
-        getClassSelectedValueRadio[0].innerHTML = "Média da Regional";
-        setRegionalMapValues(municipio);
-        
-      } else {
-        // estadual
-        getClassSelectedValueRadio[0].innerHTML = "Média do Estado";        
-        setEstadualMapValues(municipio);
+        } else if (selectedValueRadio === 'regional') {
+          // regional
+          getClassSelectedValueRadio[i].innerHTML = "Média da Regional";
+          setRegionalMapValues(municipio);
+          
+        } else {
+          // estadual
+          getClassSelectedValueRadio[i].innerHTML = "Média do Estado";     
+          setEstadualMapValues(municipio);
+        }
       }
     });
   }
