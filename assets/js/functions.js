@@ -995,6 +995,10 @@ $(document).on('click', '#radio #option3', function(event) {
     $("label#label1").removeClass("active");
 });
 
+function checkFilled() {
+  validation();
+}
+
 // função para capturar o envio do formulário e liberar os arquivos para download
 function submit_doc_form() {
 
@@ -1041,12 +1045,31 @@ if (validation()) // chama a função de validação do formulário
 
 // função pra validar email e nome
 function validation() {
-  var nome = document.getElementById("doc_form_nome").value;
-  var email = document.getElementById("doc_form_email").value;
+  var nome = document.getElementById("doc_form_nome");
+  var email = document.getElementById("doc_form_email");
   //var emailReg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
 
-  if (nome === '' || email === '') {
+  if (nome.value !== '') {
+    nome.style.borderBottom = '2px solid #009fe3';
+  } 
+  if (email.value !== '') {
+    email.style.borderBottom = '2px solid #009fe3';
+  }
+
+  if (nome.value === '' || email.value === '') {
   //nome ou email vazios
+
+  if (nome.value === '') {
+    nome.style.borderBottom = '2px solid #dc3545';
+    nome.placeholder = 'Nome é obrigatório';
+    document.getElementById("nomeHelp").style.display = 'none';
+  }  
+  if (email.value === '') {
+    email.style.borderBottom = '2px solid #dc3545';
+    email.placeholder = 'E-mail é obrigatório';
+    document.getElementById("emailHelp").style.display = 'none';
+  }
+
   return false;
   //} else if (!(email).match(emailReg)) {
   //email inválido
@@ -1056,3 +1079,4 @@ function validation() {
   return true; //se estiver tudo certo
   }
 }
+

@@ -3671,15 +3671,17 @@
 
                     <form id="doc_form" class="cc-formulario form-horizontal" action="#" method="post">
                       <div class="form-group row">
-                        <label class="col-3">Nome:</label>
+                        <label class="col-3">Nome*:</label>
                         <div class="col-9">
-                          <input class="form-control" type="text" id="doc_form_nome" name="nome">
+                          <input onchange="checkFilled();" class="form-control" type="text" id="doc_form_nome" name="nome" required oninvalid="this.setCustomValidity('Por favor, insira seu nome')">
+                          <small id="nomeHelp" class="form-text texto-light">Nome é obrigatório.</small>
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label class="col-3">E-mail:</label>
+                        <label class="col-3">E-mail*:</label>
                         <div class="col-9">
-                          <input class="form-control" type="email" id="doc_form_email" name="email">
+                          <input onchange="checkFilled();" class="form-control" type="email" id="doc_form_email" name="email" required oninvalid="this.setCustomValidity('Por favor, insira um e-mail válido')">
+                          <small id="emailHelp" class="form-text texto-light">E-mail é obrigatório.</small>
                         </div>
                       </div>
                       <div class="form-group row"><label class="col-3">Telefone:</label>
