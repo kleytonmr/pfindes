@@ -314,6 +314,10 @@ a {
   display: flex;
 }
 
+#v-pills-infra-tab .cc-box-card .clearfix, #v-pills-humano-tab .cc-box-card .clearfix, #v-pills-fiscal-tab .cc-box-card .clearfix{
+  height: 33px;
+}
+
 .cc-box-card-menu .cc-box-card:hover, .cc-box-card-menu .cc-box-card.active {
   background-color: #2A3091;
 }
