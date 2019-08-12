@@ -119,7 +119,7 @@ function populeMunicipioData(idMunicipio) {
     });
     
     if (municipio) {
-      $('img#img_cidade').attr("src","assets/img/imagem-" + municipio.key + ".jpg");
+      $('img#img_cidade').attr("src","assets/img/img-" + municipio.key + ".jpg");
       $('span#doc-pdf-municipio').html(municipio.munic);
 
       if(preencherForm){
