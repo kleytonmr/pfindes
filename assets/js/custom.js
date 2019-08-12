@@ -33,9 +33,9 @@ $(document).ready(function() {
     $(this).find(">:first-child").addClass("active");
 
 
-    setTimeout(function () {
+    /*setTimeout(function () {
       window.stickySidebar.updateSticky();
-    }, 500);
+    }, 500);*/
   });
 
   //Carousel 1
@@ -133,9 +133,9 @@ $(document).ready(function() {
     $(this).find(".fa").removeClass("fa-minus");
     $(this).find(".fa").addClass(classe);
 
-    setTimeout(function () {
+    /*setTimeout(function () {
       window.stickySidebar.updateSticky();
-    }, 1000);
+    }, 1000);*/
   });
 
   $(document).on('click', '.cc-btn-drop-acordion', function(event) {

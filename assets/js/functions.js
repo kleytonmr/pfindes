@@ -1,3 +1,5 @@
+var municipio_nome;
+var preencherForm = false;
 function getMunicipiosJson (callback) {
   //$.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
   $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/developer/munic/banco.min.json",
@@ -17,9 +19,9 @@ function initMunicipioSelect(data) {
 
 function initClusterMap(idMunicipio) {
 
-  var munic_current = idMunicipio
+  var munic_current = municipio_nome = idMunicipio;
   if (!munic_current) return;
-
+  
   // selectMunicipioOption(munic_current);
   // populeMunicipioData(munic_current);
 
@@ -115,9 +117,15 @@ function populeMunicipioData(idMunicipio) {
     var municipio = data.find(obj => {
       return obj.key === idMunicipio
     });
-    console.log(data)
+    
     if (municipio) {
-      // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
+      $('img#img_cidade').attr("src","assets/img/imagem-" + municipio.key + ".jpg");
+      $('span#doc-pdf-municipio').html(municipio.munic);
+
+      if(preencherForm){
+        var getClassDocLinks = document.getElementsByClassName("cc-link-box-conteudo"); 
+        getClassDocLinks[4].href = "assets/documentos/ideies-documento-diagnostico-personalizado-de-"+municipio.key+".pdf";
+      }
       populateMainRulerValues(municipio);
 
       var keys = Object.keys(municipio);
@@ -249,20 +257,22 @@ function clickFilterMap(idMunicipio) {
       var selectedValueRadio = $("input[name='options']:checked").val();
       var getClassSelectedValueRadio = document.getElementsByClassName("op_selectedValueRadio");
 
-      if (selectedValueRadio === 'cluster') {
-        // cluster        
-        getClassSelectedValueRadio[0].innerHTML = "Média do Cluster";
-        setClusterMapValues(municipio);
+      for (var i = 0; i < 4; i++) {
+        if (selectedValueRadio === 'cluster') {
+          // cluster        
+          getClassSelectedValueRadio[i].innerHTML = "Média do Cluster";
+          setClusterMapValues(municipio);
 
-      } else if (selectedValueRadio === 'regional') {
-        // regional
-        getClassSelectedValueRadio[0].innerHTML = "Média da Regional";
-        setRegionalMapValues(municipio);
-        
-      } else {
-        // estadual
-        getClassSelectedValueRadio[0].innerHTML = "Média do Estado";        
-        setEstadualMapValues(municipio);
+        } else if (selectedValueRadio === 'regional') {
+          // regional
+          getClassSelectedValueRadio[i].innerHTML = "Média da Regional";
+          setRegionalMapValues(municipio);
+          
+        } else {
+          // estadual
+          getClassSelectedValueRadio[i].innerHTML = "Média do Estado";     
+          setEstadualMapValues(municipio);
+        }
       }
     });
   }
@@ -493,6 +503,28 @@ function populateTexts(data) {
   var texto1 = $('.texto1');
   var texto2 = $('.texto2');
 
+  var pop = $('.pop');
+  var idhm = $('.idhm');
+  var pib = $('.pib');
+
+  var pop_formatado = municipio['pop'];
+  var idhm_formatado = municipio['idhm'];
+  var pib_formatado = municipio['pib'];
+
+  pop_formatado = parseFloat(pop_formatado).toFixed(0);
+  idhm_formatado = parseFloat(idhm_formatado).toFixed(2);
+  pib_formatado = parseFloat(pib_formatado).toFixed(0);
+
+  //substitui os pontos por vírgulas
+  idhm_formatado = idhm_formatado.replace('.',',');
+
+  //põe a variável população na página
+  pop.html(pop_formatado);
+  //põe a variável idhm na página
+  idhm.html(idhm_formatado);
+  //põe a variável pib na página
+  pib.html(pib_formatado);
+
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
     texto1.html(municipio['texto1_ian']);
@@ -657,7 +689,7 @@ function buildMediaSliderRulers() {
     'slider_chumano_media',
     'slider_gfiscal_media'
   ]
-
+//início da terceira régua
   $(sliderIds).each(function (i, id) {
     var slider = document.getElementById(id);
 
@@ -674,8 +706,7 @@ function buildMediaSliderRulers() {
 
     var media = document.createElement('span');
     media.className = "op_selectedValueRadio";
-    media.innerHTML = "Média do Cluster";
- 
+    media.innerHTML = "Média do Cluster"; 
 
     var municipio = document.createElement('span');
     municipio.innerHTML = "Vitória";
@@ -948,7 +979,6 @@ $(document).on('click', '#card-infraEstrutura', function(event) {
 
 });
 
-
 $(document).on('click', '#radio #option1', function(event) {
     $("label#label1").addClass("active");
     $("label#label2").removeClass("active");
@@ -966,3 +996,89 @@ $(document).on('click', '#radio #option3', function(event) {
     $("label#label2").removeClass("active");
     $("label#label1").removeClass("active");
 });
+
+function checkFilled() {
+  validation();
+}
+
+// função para capturar o envio do formulário e liberar os arquivos para download
+function submit_doc_form() {
+
+  var nome = document.getElementById("doc_form_nome").value;
+  var email = document.getElementById("doc_form_email").value;
+  var telefone = document.getElementById("doc_form_telefone").value;
+
+if (validation()) // chama a função de validação do formulário
+  {
+  preencherForm = true;
+  var getClassDocIconForm = document.getElementsByClassName("doc-icon");
+  var getClassDocLinks = document.querySelectorAll('.cc-link-box-conteudo');
+  var getTextDocLinks = document.querySelectorAll('.pdf-text');
+
+  for (var i = 0; i < getClassDocIconForm.length; i++) {
+
+    getClassDocIconForm[i].classList.add("flip-vertical-left");
+    getClassDocIconForm[i].src = "assets/img/pdf-icon.png";
+    getClassDocIconForm[i].style.opacity = '1';
+    getTextDocLinks[i].style.color = '#fff';
+
+    switch (getClassDocLinks[i].id) {
+      case "doc-link-fichamento" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-fichamento-dos-indicadores.pdf";          
+        break;
+        case "doc-link-referencial" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-referencial-teorico-estatistico.pdf";
+        break;
+        case "doc-link-relatorio-tecnico-analise" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-relatorio-tecnico-analise-dos-resultados.pdf";
+        break;
+        case "doc-link-base-dados" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-base-de-dados.pdf";
+        break;
+        case "doc-link-diagnostico-personalizado" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-diagnostico-personalizado-de-"+municipio_nome+".pdf";
+        break;
+    }
+  }
+
+  //document.getElementById("doc_form").submit(); //disparo do form caso esteja tudo correto  
+  }
+}
+
+// função pra validar email e nome
+function validation() {
+  var nome = document.getElementById("doc_form_nome");
+  var email = document.getElementById("doc_form_email");
+  //var emailReg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
+
+  if (nome.value !== '') {
+    nome.style.borderBottom = '2px solid #009fe3';
+  } 
+  if (email.value !== '') {
+    email.style.borderBottom = '2px solid #009fe3';
+  }
+
+  if (nome.value === '' || email.value === '') {
+  //nome ou email vazios
+
+  if (nome.value === '') {
+    nome.style.borderBottom = '2px solid #dc3545';
+    nome.placeholder = 'Nome é obrigatório';
+    document.getElementById("nomeHelp").style.display = 'none';
+  }  
+  if (email.value === '') {
+    email.style.borderBottom = '2px solid #dc3545';
+    email.placeholder = 'E-mail é obrigatório';
+    document.getElementById("emailHelp").style.display = 'none';
+  }
+
+  return false;
+  //} else if (!(email).match(emailReg)) {
+  //email inválido
+  //alert("email inválido")
+  //return false; //se estiver algo errado
+  } else {
+  return true; //se estiver tudo certo
+  }
+}
+
