@@ -3738,8 +3738,13 @@ a {
 
 .cc-box-pdf .cc-link-box-conteudo {
   text-decoration: none;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
   display: block;
+}
+
+.cc-box-pdf .cc-link-box-conteudo:hover {
+  background-color: #16196c;
 }
 
 .flip-vertical-left {
