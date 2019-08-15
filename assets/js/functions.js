@@ -1,5 +1,8 @@
 var municipio_nome;
 var preencherForm = false;
+var bool_Carousel = false;
+var cidades_carrosel = [];
+
 function getMunicipiosJson (callback) {
   //$.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
   $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/developer/munic/banco.min.json",
@@ -1080,5 +1083,40 @@ function validation() {
   } else {
   return true; //se estiver tudo certo
   }
+}
+
+function active_custom_carousel_1(cidade) {
+  var getClassCarousel = document.getElementsByClassName("carousel-1-"+cidade);
+
+  if (cidades_carrosel.length > 0) { //array maior que zero
+    if (cidades_carrosel.includes(cidade) == false) {
+      cidades_carrosel.push(cidade);
+      console.log("adicionando mais um elemento");
+    } else {
+      for (let i = 0; i < 5; i++) {
+        if (cidades_carrosel[i] === cidade) {
+          cidades_carrosel.splice(i, 1);
+          console.log("removendo elemento");
+        }
+      }
+    }
+    console.log(cidades_carrosel);
+    console.log("primeiro elemento");
+    console.log(bool_Carousel);
+  }
+
+  if (cidades_carrosel.length == 0) {
+    console.log("sem elemento");
+  }
+
+  if (bool_Carousel) {
+    $(getClassCarousel).height(515);
+    console.log(bool_Carousel);
+  } else {
+    $(getClassCarousel).height(375);
+    console.log(bool_Carousel);
+  }
+  
+
 }
 

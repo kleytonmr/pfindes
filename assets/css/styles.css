@@ -4718,7 +4718,7 @@ a {
   max-width: 90%;
   position: absolute;
   right: 0;
-  top: 100px;
+  top: 190px;
 }
 
 .slick-dots .slick-active button {
@@ -5126,9 +5126,12 @@ sidebar {
 }
 
 .cc-custom-carousel-1 .cc-slide{
-  height: 420px !important;
   position: relative;
   margin: 0 10px;
+}
+
+.carousel-1-oeiras-pi, .carousel-1-vitoria-es, .carousel-1-cachoeiro-es, .carousel-1-niteroi-rj, .carousel-1-sao-paulo-sp  {
+  height: 375px; /* 515px aberto controla altura do carrossel - aberto e fechado */
 }
 
 .cc-custom-carousel-1 .cc-box-imagem{
@@ -5136,7 +5139,7 @@ sidebar {
   background-position: center;
   background-size: cover;
   width: 315px;
-  height: 260px;
+  height: 275px;
   border: 10px solid #fff;
   border-radius: 10px;
 }
