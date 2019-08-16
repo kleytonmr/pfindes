@@ -5134,6 +5134,80 @@ sidebar {
   height: 375px; /* 515px aberto controla altura do carrossel - aberto e fechado */
 }
 
+.container-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  border-radius: 5px;    
+  margin: 5px;
+}
+
+.logo_parceiros_1 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_2 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_3 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_4 {
+  height: 50px;
+  width: auto;
+}
+
+.logo_parceiros_5 {
+  height: 30px;
+  width: auto;
+}
+
+.titulo_parceiros {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  grid-area: titulo_parceiros;
+  color: #fff;
+  font-weight: 300;
+}
+
+@media (min-width: 1200px){
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    width: 447px;
+    top: 14px;
+    left: 285px;
+  }  
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    width: 447px;
+    top: 14px;
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    min-width: 447px;
+    top: 14px;
+    left: 50px;
+  }
+}
+
 .cc-custom-carousel-1 .cc-box-imagem{
   background-repeat: no-repeat;
   background-position: center;
