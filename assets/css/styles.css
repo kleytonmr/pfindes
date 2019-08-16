@@ -2341,6 +2341,10 @@ a {
     border-top: 1px solid #fff;
     padding-top: 15px;
   }
+  
+  .container {
+    max-width: 950px;
+  }
 }
 
 @media (min-width: 992px) {
