@@ -46,24 +46,26 @@ $(document).ready(function() {
     arrows:!1,
     centerMode:!0,
     autoplay:!0,
-    responsive:[{
-        breakpoint:992,
-        settings:{
-            centerPadding:"0px"
-            ,arrows:!1,
-            slidesToShow:2,
-            infinite:!1
-        }
-    }],
-    responsive:[{
+    responsive:[
+      {
+        breakpoint:1200,
+        settings: {
+          centerPadding:"0px"
+          ,arrows:!1,
+          slidesToShow:2,
+          infinite:!1
+        }       
+      },
+      {
         breakpoint:768,
-        settings:{
-            centerPadding:"0px"
-            ,arrows:!1,
-            slidesToShow:1,
-            infinite:!1
-        }
-    }]
+        settings: {
+          centerPadding:"0px"
+          ,arrows:!1,
+          slidesToShow:1,
+          infinite:!1
+        }        
+      }
+    ]
   });
 
   //Carousel 2

@@ -53,10 +53,15 @@ a {
   border-bottom-left-radius: 8px 8px;
   border-bottom-right-radius: 8px 8px;
   cursor: pointer;
-  width: 79%;
+  width: 90%;
   margin-left: 30px;
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+}
+@media (max-width: 1200px) {
+  .cc-box-eixo-geral.cc-borda-grande .col-lg-3 {
+    left: -15px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -261,7 +266,7 @@ a {
 
 @media (min-width: 992px) {
   .cc-box-card-menu .cc-box-card .cc-descricao .cc-titulo-menu-eixo {
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
     /* color: color: rgb(45, 48, 145); */
     color: rgb(45, 48, 145);
@@ -1161,6 +1166,12 @@ a {
   float: left;
   max-width: 200px;
   margin-right: 25px;
+}
+
+@media (max-width: 1200px) {
+  .cc-como-funciona .cc-figure {
+    display: none !important;
+  }
 }
 
 @media (min-width: 576px) {
@@ -4707,7 +4718,7 @@ a {
   max-width: 90%;
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 190px;
 }
 
 .slick-dots .slick-active button {
@@ -4834,11 +4845,14 @@ a {
 sidebar {
   will-change: min-height;
 }
+
+/*
 .sidebar__inner{
-  transform: translate(0, 0); /* For browsers don't support translate3d. */
+  transform: translate(0, 0); For browsers don't support translate3d.
   transform: translate3d(0, 0, 0);
   will-change: position, transform;
 }
+*/
 
 #main-slider{
   top: 50%;
@@ -5112,9 +5126,86 @@ sidebar {
 }
 
 .cc-custom-carousel-1 .cc-slide{
-  height: 340px;
   position: relative;
   margin: 0 10px;
+}
+
+.carousel-1-oeiras-pi, .carousel-1-vitoria-es, .carousel-1-cachoeiro-es, .carousel-1-niteroi-rj, .carousel-1-sao-paulo-sp  {
+  height: 375px; /* 515px aberto controla altura do carrossel - aberto e fechado */
+}
+
+.container-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  border-radius: 5px;    
+  margin: 5px;
+}
+
+.logo_parceiros_1 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_2 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_3 {
+  height: 40px;
+  width: auto;
+}
+
+.logo_parceiros_4 {
+  height: 50px;
+  width: auto;
+}
+
+.logo_parceiros_5 {
+  height: 30px;
+  width: auto;
+}
+
+.titulo_parceiros {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  grid-area: titulo_parceiros;
+  color: #fff;
+  font-weight: 300;
+}
+
+@media (min-width: 1200px){
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    width: 447px;
+    top: 14px;
+    left: 285px;
+  }  
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    width: 447px;
+    top: 14px;
+    left: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .box_parceiros {
+    position: relative;
+    height: 153px;
+    min-width: 447px;
+    top: 14px;
+    left: 50px;
+  }
 }
 
 .cc-custom-carousel-1 .cc-box-imagem{
@@ -5122,7 +5213,7 @@ sidebar {
   background-position: center;
   background-size: cover;
   width: 315px;
-  height: 260px;
+  height: 275px;
   border: 10px solid #fff;
   border-radius: 10px;
 }
@@ -5158,7 +5249,7 @@ sidebar {
   color: #fff;
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 22px;
   display: block;
   margin-bottom: 15px;
@@ -5177,7 +5268,7 @@ sidebar {
   position: relative;
   right: 0;
   left: 0;
-  bottom: 0;
+  top: 30px;
 }
 
 .cc-custom-carousel-1 .slick-dots li{
@@ -5217,10 +5308,13 @@ sidebar {
 .cc-espaco-reservado .cc-circulo{
   width: 50px;
   height: 50px;
-  background-color: #d6d6d6;
   border-radius: 50%;
   margin: auto;
   margin-bottom: 15px;
+}
+
+.icon-pop, .icon-idhm, .icon-pib {
+  filter: invert(1);
 }
 
 .icon-pop {
