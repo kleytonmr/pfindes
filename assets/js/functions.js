@@ -1087,36 +1087,16 @@ function validation() {
 
 function active_custom_carousel_1(cidade) {
   var getClassCarousel = document.getElementsByClassName("carousel-1-"+cidade);
-
-  if (cidades_carrosel.length > 0) { //array maior que zero
-    if (cidades_carrosel.includes(cidade) == false) {
-      cidades_carrosel.push(cidade);
-      console.log("adicionando mais um elemento");
-    } else {
-      for (let i = 0; i < 5; i++) {
-        if (cidades_carrosel[i] === cidade) {
-          cidades_carrosel.splice(i, 1);
-          console.log("removendo elemento");
-        }
+  if (cidades_carrosel.includes(cidade) == false) { //cidade nao esta no array
+    cidades_carrosel.push(cidade);
+    $(getClassCarousel).height(515);
+  } else {                                          //cidade esta no array
+    for (let i = 0; i < 5; i++) {                   //busca a cidade no array
+      if (cidades_carrosel[i] === cidade) {         //encontrou a cidade no array
+        cidades_carrosel.splice(i, 1);              //remove cidade do array
+        $(getClassCarousel).height(375);        
       }
     }
-    console.log(cidades_carrosel);
-    console.log("primeiro elemento");
-    console.log(bool_Carousel);
   }
-
-  if (cidades_carrosel.length == 0) {
-    console.log("sem elemento");
-  }
-
-  if (bool_Carousel) {
-    $(getClassCarousel).height(515);
-    console.log(bool_Carousel);
-  } else {
-    $(getClassCarousel).height(375);
-    console.log(bool_Carousel);
-  }
-  
-
 }
 
