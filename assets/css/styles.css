@@ -1397,7 +1397,8 @@ a {
   font-size: 18px;
   padding: 10px;
   text-transform: uppercase;
-  max-width: 201px;
+  max-width: 202px;
+  min-width: 201px;
 }
 
 #cc-section-tres .cc-box-descricao .cc-box-botao .cc-botao i{
@@ -2340,10 +2341,6 @@ a {
     text-transform: uppercase;
     border-top: 1px solid #fff;
     padding-top: 15px;
-  }
-  
-  .container {
-    max-width: 950px;
   }
 }
 
