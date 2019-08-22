@@ -3628,7 +3628,7 @@ a {
 
 .cc-box-galeria .cc-box-img-conteudo .cc-informacoes .cc-nota-raking .cc-ranking {
   background-image: url("../../assets/img/selo-gold.png");
-  background-position: 10% -3%;
+  background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 50%;
@@ -3636,7 +3636,7 @@ a {
   float: right;
   text-align: center;
   color: #fff;
-  padding: 5px;
+  padding: 8px;
   font-weight: 700;
   margin-left: 0;
   margin-right: 0;
@@ -3708,9 +3708,10 @@ a {
   padding: 4px;
 }
 
-.doc-icon {
+.doc-icon, .doc-icon-xls {
   opacity: 0.5;
 }
+
 .cc-box-pdf .cc-box-conteudo p {
   font-family: 'Open Sans', sans-serif;
   font-size: 10px;
