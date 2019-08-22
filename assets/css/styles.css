@@ -1405,6 +1405,7 @@ a {
   text-transform: uppercase;
   max-width: 202px;
   min-width: 201px;
+  margin-bottom: 30px;
 }
 
 #cc-section-tres .cc-box-descricao .cc-box-botao .cc-botao i{
@@ -1766,7 +1767,7 @@ a {
   #cc-section-ian .cc-titulo-ian {
     font-weight: 900;
     font-size: 32px;
-    text-align: center;
+    /*text-align: center;*/
     color: rgb(42, 48, 145);
     text-transform: uppercase;
     font-family: Roboto, sans-serif;
@@ -5286,7 +5287,7 @@ sidebar {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 22px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 0 0 5px 5px;
 }
 
