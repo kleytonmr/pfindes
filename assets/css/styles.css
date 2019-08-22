@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 input[type="email"]:required, input[type="text"]:required  {
   border-bottom:2px solid #009fe3;
 }
@@ -1397,7 +1403,9 @@ a {
   font-size: 18px;
   padding: 10px;
   text-transform: uppercase;
-  max-width: 201px;
+  max-width: 202px;
+  min-width: 201px;
+  margin-bottom: 30px;
 }
 
 #cc-section-tres .cc-box-descricao .cc-box-botao .cc-botao i{
@@ -1759,7 +1767,7 @@ a {
   #cc-section-ian .cc-titulo-ian {
     font-weight: 900;
     font-size: 32px;
-    text-align: center;
+    /*text-align: center;*/
     color: rgb(42, 48, 145);
     text-transform: uppercase;
     font-family: Roboto, sans-serif;
@@ -1927,7 +1935,7 @@ a {
   .cc-redes-sociais .cc-box-menu .cc-main-menu li a {
     display: inline-block;
     margin: 0 10px;
-    max-width: 77px;
+    max-width: 100%;
     margin-bottom: 10px;
   }
 }
@@ -5133,7 +5141,7 @@ sidebar {
 .carousel-1-oeiras-pi, .carousel-1-vitoria-es, .carousel-1-cachoeiro-es, .carousel-1-niteroi-rj, .carousel-1-sao-paulo-sp  {
   height: 375px; /* 515px aberto controla altura do carrossel - aberto e fechado */
 }
-
+/*
 .container-box {
   display: flex;
   flex-wrap: wrap;
@@ -5177,9 +5185,10 @@ sidebar {
   color: #fff;
   font-weight: 300;
 }
+*/
 
 @media (min-width: 1200px){
-  .box_parceiros {
+  .container-box {
     position: relative;
     height: 153px;
     width: 447px;
@@ -5189,7 +5198,7 @@ sidebar {
 }
 
 @media screen and (max-width: 1199px) and (min-width: 768px) {
-  .box_parceiros {
+  .container-box {
     position: relative;
     height: 153px;
     width: 447px;
@@ -5199,13 +5208,66 @@ sidebar {
 }
 
 @media screen and (max-width: 768px) {
-  .box_parceiros {
+  .container-box {
     position: relative;
     height: 153px;
     min-width: 447px;
     top: 14px;
     left: 50px;
   }
+  
+  .parceiros_desktop {
+    display: none !important;
+  }
+
+  .produzir-margin {
+    margin-left: -200px;
+    margin-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .parceiros_mobile {
+    display: none !important;
+  }
+}
+
+.container-box {
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 50px 50px 50px;
+  grid-template-areas: "a b"
+                      "c d"
+                      "e f"
+}
+
+.titulo_parceiros {
+  grid-area: a;
+  color: #fff;
+}
+.logo_parceiros_1 {
+  height: 40px;
+  grid-area: b;
+}
+
+.logo_parceiros_2 {
+  height: 40px;
+  grid-area: c;
+}
+
+.logo_parceiros_3 {
+  height: 40px;
+  grid-area: f;
+}
+
+.logo_parceiros_4 {
+  height: 40px;
+  grid-area: e;
+}
+
+.logo_parceiros_5 {
+  height: 30px;
+  grid-area: d;
 }
 
 .cc-custom-carousel-1 .cc-box-imagem{
@@ -5225,7 +5287,7 @@ sidebar {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 22px;
-  padding: 15px;
+  padding: 10px;
   border-radius: 0 0 5px 5px;
 }
 
