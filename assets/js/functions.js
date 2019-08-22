@@ -1021,7 +1021,13 @@ if (validation()) // chama a função de validação do formulário
   for (var i = 0; i < getClassDocIconForm.length; i++) {
 
     getClassDocIconForm[i].classList.add("flip-vertical-left");
-    getClassDocIconForm[i].src = "assets/img/pdf-icon.png";
+    
+    if(getClassDocIconForm[i].src.indexOf("xls") != -1) {
+      getClassDocIconForm[i].src = "assets/img/xls-icon.png";
+    } else {
+      getClassDocIconForm[i].src = "assets/img/pdf-icon.png";
+    }
+    
     getClassDocIconForm[i].style.opacity = '1';
     getTextDocLinks[i].style.color = '#fff';
 
