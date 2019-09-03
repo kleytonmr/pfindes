@@ -3151,7 +3151,7 @@ a {
     margin: initial;
   }
 }
-
+/*
 .cc-box-galeria .cc-box-img-conteudo:before {
   content: "";
   position: absolute;
@@ -3180,7 +3180,7 @@ a {
     width: 354px;
   }
 }
-
+*/
 .cc-box-entre-em-contato {
   margin-top: 40px;
 }
@@ -5103,7 +5103,7 @@ sidebar {
   .container-box {
     position: relative;
     height: 153px;
-    min-width: 447px;
+    /*min-width: 447px;*/
     top: 14px;
     left: 50px;
   }
