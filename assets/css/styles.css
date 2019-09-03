@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-min-width: 670px;
-}
-
 input[type="email"]:required, input[type="text"]:required  {
   border-bottom:2px solid #009fe3;
 }
