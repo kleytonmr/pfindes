@@ -1909,7 +1909,7 @@ a {
 .cc-redes-sociais .cc-box-menu .cc-main-menu {
   margin: 0;
   padding: 0;
-  float: none;
+  float: left;
 }
 
 @media (min-width: 768px) {
@@ -1935,7 +1935,7 @@ a {
   .cc-redes-sociais .cc-box-menu .cc-main-menu li a {
     display: inline-block;
     margin: 0 10px;
-    max-width: 100%;
+    /* max-width: 100%; */
     margin-bottom: 10px;
   }
 }
@@ -2260,7 +2260,7 @@ a {
   background-color: #662a9d;
 }
 
-@media (max-width: 767px) /* desaparece abaixo de ipad pro */
+@media (max-width: 767px) /* abaixo de ipad pro */
 {
   .cc-box-content {
     display: none;
@@ -2271,15 +2271,30 @@ a {
     margin-right: auto;
   }
   .cc-box-conteudo-cabecalho .titulo-desc.col-6 {
-    -ms-flex: 0 0 66.666667%;
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
+    -ms-flex: calc(100% - 151px);
+    flex: calc(100% - 151px);
+    max-width: calc(100% - 151px);
   }
   .cc-box-conteudo-cabecalho .titulo-produzir.col-6 {
     -ms-flex: 151px;
     flex: 0 0 151px;
     max-width: 151px;
   }
+
+  .container-box {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 50px 50px;
+  }
+
+  .cc-regua-grande {
+    padding: 0px 50px;
+  }
+
+  .cc-como-funciona .texto1, .cc-como-funciona .texto2 {
+    margin-left: 0px;
+  }
+  
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -5105,7 +5120,9 @@ sidebar {
     height: 153px;
     /*min-width: 447px;*/
     top: 14px;
-    left: 50px;
+    left: 0px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .parceiros_desktop {

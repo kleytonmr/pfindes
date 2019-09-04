@@ -282,7 +282,6 @@ function clickFilterMap(idMunicipio) {
 }
 
 function setEstadualMapValues(municipio) {
-  console.log(municipio.pos_ian);
   if (municipio) {
 
     //  variável: ian
@@ -551,7 +550,7 @@ function populateTexts(data) {
   }
 
 }
-
+//inicio da terceira regua
 function buildCategoriesSliderRuler(keyName) {
   var slider = document.getElementById('slider_' + keyName);
 
