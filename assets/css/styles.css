@@ -5153,7 +5153,6 @@ sidebar {
   .parceiros_desktop {
     display: none !important;
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -5830,4 +5829,12 @@ sidebar {
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+@media screen and (max-width: 767px) {
+
+  .cc-div-categorias .cc-eixo .cc-content .cc-conteudo h1 {
+    height: auto !important;
+  }
+
 }
