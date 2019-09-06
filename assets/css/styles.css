@@ -64,6 +64,84 @@ a {
   position: relative;
   margin-bottom: 15px;
 }
+
+.cc-box-card-menu-mobile .cc-box-card-mobile {
+  background: #fff;
+  border-radius: 4px;
+  height: 50px;
+  margin-top: 10px;
+  border-bottom: 5px solid #2A3091;
+  border-bottom-left-radius: 8px 8px;
+  border-bottom-right-radius: 8px 8px;
+  cursor: pointer;
+  width: 90%;
+  margin-left: 30px;
+  position: relative;
+  margin-bottom: 0;
+  padding-right: 20px;
+}
+
+.cc-box-card-menu-mobile .cc-box-card-mobile .cc-ranking {
+  background-image: url("../../assets/img/selo-gold.png");
+  background-position: 10% -3%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 31px;
+  height: 31px;
+  float: right;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-right: -7px;
+  margin-top: 7px;
+  margin-bottom: auto;
+  font-size: 14px;
+}
+
+.cc-box-card-menu-mobile .cc-box-card-mobile .cc-pontuacao {
+  background-image: url("../../assets/img/selo-blue.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 31px;
+  height: 31px;
+  float: right;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+  font-weight: 700;
+  margin-left: 5px;
+  margin-top: 7px;
+  margin-bottom: auto;
+  font-size: 14px;
+}
+
+.img-fluid-mobile {
+  height: 30px;
+  width: 30px;
+  margin-left: 20px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.img-icon-mobile {
+  height: 100%;
+}
+
+.pills-tab {
+  background-color: #fff;
+  padding: 10px;
+  width: calc(100% - 60px);
+  border-radius: 8px;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #2A3091;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+
 @media (max-width: 1200px) {
   .cc-box-eixo-geral.cc-borda-grande .col-lg-3 {
     left: -15px;
@@ -239,13 +317,19 @@ a {
   }
 }
 
-.cc-box-card-menu .cc-box-card .cc-descricao .cc-titulo-menu-eixo {
+.cc-box-card-menu .cc-box-card .cc-descricao .cc-titulo-menu-eixo, .cc-box-card-menu-mobile .cc-box-card-mobile .cc-descricao .cc-titulo-menu-eixo {
   font-size: 15px;
   text-transform: uppercase;
   color: #2A3091;
   font-family: Roboto, sans-serif;
   font-weight: 300;
   display: inline-block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.cc-box-card-menu-mobile .cc-box-card-mobile .cc-descricao .cc-titulo-menu-eixo {
+  margin-left: 10px;
 }
 
 @media (min-width: 576px) {
@@ -321,8 +405,12 @@ a {
   background-image: url("../img/produzir-menu-gestao-hover.png");
 }
 
-.cc-box-card-menu .cc-box-card .cc-descricao {
+.cc-box-card-menu .cc-box-card .cc-descricao, .cc-box-card-menu-mobile .cc-box-card-mobile .cc-descricao {
   display: flex;
+}
+
+.cc-box-card-menu-mobile .cc-box-card-mobile .cc-descricao {
+  height: 100%;
 }
 
 #v-pills-infra-tab .cc-box-card .clearfix, #v-pills-humano-tab .cc-box-card .clearfix, #v-pills-fiscal-tab .cc-box-card .clearfix{
@@ -1127,6 +1215,10 @@ a {
     left: 27px;
     background: transparent;
   }
+
+  #cc-section-ian .col-md-3 {
+  padding-right: 0;
+  }
 }
 
 @media (min-width: 992px){
@@ -1342,6 +1434,12 @@ a {
 #cc-section-ian .cc-box-conteudo .cc-img-boneco {
   width: 100%;
 }
+
+#cc-section-ian .col-md-3 {
+  padding-right: 15px;
+}
+
+
 
 .cc-section-select .cc-titulo {
   color: #666;
@@ -2294,11 +2392,11 @@ a {
   .cc-como-funciona .texto1, .cc-como-funciona .texto2 {
     margin-left: 0px;
   }
-  
+
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px) {
-  
+
   .cc-box-conteudo-cabecalho .offset-md-2 {
     margin-left: 8.333333%;
   }
@@ -2308,7 +2406,17 @@ a {
     max-width: 41.666667%;
   }
 
+  #cc-section-ian .col-md-9 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
 
+  #cc-section-ian .col-md-3 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
 
 }
 
@@ -2993,6 +3101,10 @@ a {
   position: relative;
   z-index: 1;
   margin: auto;
+}
+
+#cc-imagem-texto {
+  color: #2A3091;
 }
 
 @media (min-width: 576px) {
@@ -4361,95 +4473,8 @@ a {
   display: block;
 }
 
-@media (min-width: 576px) {
-  .cc-segundo-menu .cc-custom-link {
-    background-color: #fff;
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #2A3091;
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    margin-bottom: 5px;
-    padding: 7px 15px;
-    display: block;
-  }
-}
-
-.cc-segundo-menu .cc-custom-link.active, .cc-segundo-menu .cc-custom-link:hover {
-  background-color: #2A3091;
-}
-
-.cc-segundo-menu .cc-custom-link:hover .cc-imagem-texto {
-  color: #fff;
-}
-
-.cc-segundo-menu .cc-custom-link:hover .cc-imagem-texto img {
-  filter: brightness(0) invert(1);
-}
-
-.cc-segundo-menu .cc-custom-link:hover .cc-pontuacao {
-  color: #000000;
-  background-image: url("../../assets/img/selo-branco.png");
-}
-
-.cc-segundo-menu .cc-custom-link.active .cc-imagem-texto img {
-  filter: brightness(0) invert(1);
-}
-
-.cc-segundo-menu .cc-custom-link.active .cc-pontuacao {
-  color: #2A3091;
-  background-image: url("../../assets/img/selo-branco.png");
-}
-
-.cc-segundo-menu .cc-custom-link.active .cc-imagem-texto {
-  color: #fff;
-}
-
-.cc-segundo-menu .navbar-brand {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin-bottom: 10px;
-}
-
-.cc-segundo-menu .navbar-brand .cc-imagem-texto {
-  font-size: 11px;
-  text-transform: uppercase;
-  color: #2A3091;
-  font-family: Roboto, sans-serif;
-  font-weight: 700;
-}
-
-@media (min-width: 576px) {
-  .cc-segundo-menu .navbar-brand .cc-imagem-texto {
-    font-size: 18px;
-    text-transform: uppercase;
-    color: #2A3091;
-    font-family: Roboto, sans-serif;
-    font-weight: 700;
-  }
-}
-
 .cc-cabecalho .navbar .cc-border-none {
   border: none;
-}
-
-@media (min-width: 576px) {
-  .cc-segundo-menu .navbar-toggler {
-    padding: 7px 15px;
-    margin: 0;
-    font-size: 28px;
-  }
-}
-
-.cc-segundo-menu .navbar-toggler {
-  padding: 12px 8px;
-  margin-top: -12px;
-}
-
-.cc-segundo-menu .cc-custom-link .cc-imagem-texto img {
-  width: 30px;
-  margin-right: 5px;
 }
 
 .cc-fixo .cc-box-card-menu .cc-box-card {
@@ -4921,7 +4946,7 @@ sidebar {
 #main-slider span.cc-valor.cc-valor-municipio{
   position: relative;
   /*top: -76px;*/
-  left: 27px;  
+  left: 27px;
   margin: auto;
 }
 
@@ -5055,7 +5080,7 @@ sidebar {
 }
 
 .box {
-  border-radius: 5px;    
+  border-radius: 5px;
   margin: 5px;
 }
 
@@ -5101,7 +5126,7 @@ sidebar {
     width: 447px;
     top: 14px;
     left: 285px;
-  }  
+  }
 }
 
 @media screen and (max-width: 1199px) and (min-width: 768px) {
@@ -5124,7 +5149,7 @@ sidebar {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .parceiros_desktop {
     display: none !important;
   }
@@ -5785,7 +5810,7 @@ sidebar {
   color: rgb(102, 102, 102);
   line-height: 16px;
   text-align: left;
-  letter-spacing: -0.5px; 
+  letter-spacing: -0.5px;
   padding: 10px 10px 5px 10px;
 }
 
@@ -5802,7 +5827,7 @@ sidebar {
 }
 
 #img_cidade {
-  width:100%; 
-  height:100%; 
-  object-fit:cover; 
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
