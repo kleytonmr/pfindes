@@ -802,6 +802,7 @@ $(document).ready(function() {
     setFilterMapSelected('vitoria');
     buildMembrosCluster('vitoria');
   }, 1000);
+
 });
 
 
@@ -999,6 +1000,8 @@ $(document).on('click', '#radio #option3', function(event) {
     $("label#label1").removeClass("active");
 });
 
+
+/* inicio validação formulario # eric */
 function checkFilled() {
   validation();
 }
@@ -1089,6 +1092,9 @@ function validation() {
   return true; //se estiver tudo certo
   }
 }
+/* fim validação formulario # eric */
+
+/* inicio exibição carrosel dos temas # eric */
 
 function active_custom_carousel_1(cidade) {
   var getClassCarousel = document.getElementsByClassName("carousel-1-"+cidade);
@@ -1104,4 +1110,4 @@ function active_custom_carousel_1(cidade) {
     }
   }
 }
-
+/* fim exibição carrosel dos temas # eric */

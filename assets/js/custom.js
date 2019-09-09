@@ -6,13 +6,13 @@ $(document).ready(function() {
 
     var sessionName = $(this).find('h4').text();
     $('#menu-session').data('session', sessionName.toLowerCase());
-    
+
     if(sessionName === 'IAN') {
       var nTitle = '<strong>' + sessionName + '</strong> de &nbsp;<span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>"</span>';
     } else {
       var nTitle = 'Eixo <strong>' + sessionName + '</strong> de &nbsp;<span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>"</span>';
     }
-  
+    console.log(sessionName)
     $('.cc-titulo-principal').html('');
     $('.cc-titulo-principal').html(nTitle);
 
@@ -54,7 +54,7 @@ $(document).ready(function() {
           ,arrows:!1,
           slidesToShow:2,
           infinite:!1
-        }       
+        }
       },
       {
         breakpoint:768,
@@ -63,7 +63,7 @@ $(document).ready(function() {
           ,arrows:!1,
           slidesToShow:1,
           infinite:!1
-        }        
+        }
       }
     ]
   });

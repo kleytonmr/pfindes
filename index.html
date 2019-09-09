@@ -117,8 +117,8 @@
                         IDEIES DE DADOS
                       </a>
                     </li>
-                    <li class="nav-item" role="presentation">
-                      <a class="nav-link cc-item cc-border-none" href="http://www.portaldaindustria-es.com.br/observatorio-da-industria">
+                    <li class="nav-item li-none" role="presentation">
+                      <a class="nav-link cc-item" href="http://www.portaldaindustria-es.com.br/observatorio-da-industria">
                         Observatório da Industria
                       </a>
                     </li>
@@ -282,17 +282,21 @@
                 <span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">Vitoria</span>"</span></h1>
                 <nav id="menu-session" data-session="ian" class="navbar px-0 navbar-light navbar-expand-lg cc-segundo-menu d-block d-lg-none">
                 <div class="container-fluid">
-                  <a class="navbar-brand pills-tab" id="v-pils-ian-tab" href="#v-pills-ian" data-toggle="pill" role="tab" aria-controls="v-pills-ian" data-target="#navcol-2">
-                    <span class="cc-imagem-texto">
-                      IAN
-                    </span>
-                    <span data-cpos_ian="" class="cc-ranking">
-                      0
-                    </span>
-                    <span data-ian="" class="cc-pontuacao">
-                      0
-                    </span>
+                  <a class="navbar-brand pills-tab" id="v-pills-ian-tab" data-toggle="pill" href="#v-pills-ian" role="tab" aria-controls="v-pills-ian" aria-selected="true">
+                    <div class="cc-box-card-mobile active cc-card-principal">
+                      <span data-cpos_ian="" class="d-block cc-ranking">
+                        0,0
+                      </span>
+                      <span data-ian="" class="d-block cc-pontuacao">
+                        0,0
+                      </span>
+                      <div class="cc-descricao">
+                        <h4 style="margin-left: 20px; color: #2A3091;" class="cc-titulo-menu-eixo">IAN</h4>
+                      </div>
+                    </div>
                   </a>
+
+
                   <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-2">
                     <span class="sr-only">
                       Toggle navigation
@@ -310,21 +314,10 @@
                         <div class="sidebar__inner">
                           <div class="cc-box-card-menu-mobile">
                               <div class="nav flex-column nav-pills" id="menu-session" data-session="ian" role="tablist" aria-orientation="vertical">
-                                <a class="" id="v-pills-ian-tab" data-toggle="pill" href="#v-pills-ian" role="tab" aria-controls="v-pills-ian" aria-selected="true">
-                                  <div class="cc-box-card-mobile active cc-card-principal">
-                                    <span data-cpos_ian="" class="d-block cc-ranking">
-                                      0,0
-                                    </span>
-                                    <span data-ian="" class="d-block cc-pontuacao">
-                                      0,0
-                                    </span>
-                                    <div class="cc-descricao">
-                                      <h4 style="margin-left: 20px;" class="cc-titulo-menu-eixo">IAN</h4>
-                                    </div>
-                                  </div>
-                                </a>
+
+
                                 <a class="" id="v-pills-infra-tab" data-toggle="pill" href="#v-pills-infra" role="tab" aria-controls="v-pills-infra" aria-selected="false">
-                                  <div class="cc-box-card-mobile">
+                                  <div data-toggle="collapse" data-target="#navcol-2" aria-expanded="true" class="cc-box-card-mobile">
                                     <span data-cpos_infra="" class="d-block cc-ranking">
                                       0,0
                                     </span>
@@ -338,7 +331,7 @@
                                   </div>
                                 </a>
                                 <a class="" id="v-pills-mercado-tab" data-toggle="pill" href="#v-pills-mercado" role="tab" aria-controls="v-pills-mercado" aria-selected="false">
-                                  <div class="cc-box-card-mobile">
+                                  <div data-toggle="collapse" data-target="#navcol-2" aria-expanded="true" class="cc-box-card-mobile">
                                     <span data-cpos_merc="" class="d-block cc-ranking">
                                       0,0
                                     </span>
@@ -352,7 +345,7 @@
                                   </div>
                                 </a>
                                 <a class="" id="v-pills-humano-tab" data-toggle="pill" href="#v-pills-humano" role="tab" aria-controls="v-pills-humano" aria-selected="false">
-                                  <div class="cc-box-card-mobile">
+                                  <div data-toggle="collapse" data-target="#navcol-2" aria-expanded="true" class="cc-box-card-mobile">
                                     <span data-cpos_caph="" class="d-block cc-ranking">
                                       0,0
                                     </span>
@@ -366,7 +359,7 @@
                                   </div>
                                 </a>
                                 <a class="" id="v-pills-fiscal-tab" data-toggle="pill" href="#v-pills-fiscal" role="tab" aria-controls="v-pills-fiscal" aria-selected="false">
-                                  <div class="cc-box-card-mobile">
+                                  <div data-toggle="collapse" data-target="#navcol-2" aria-expanded="true" class="cc-box-card-mobile">
                                     <span data-cpos_gestfin="" class="d-block cc-ranking">
                                       0,0
                                     </span>
@@ -1042,7 +1035,7 @@
                 </div>
               </div>
 
-              <!-- cateorias de eixo -->
+              <!-- categorias de eixo -->
 
               <div class="tab-content" id="categorias">
 
