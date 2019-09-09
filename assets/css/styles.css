@@ -22,7 +22,7 @@ input[type="email"]:required, input[type="text"]:required  {
   font-size: 18px;
   text-transform: uppercase;
   color: #2A3091;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
 }
 
 a {
@@ -36,7 +36,7 @@ a {
     font-size: 26px;
     text-transform: uppercase;
     color: #2A3091;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
   }
 /*}*/
 
