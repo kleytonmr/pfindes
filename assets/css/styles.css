@@ -224,6 +224,7 @@ a {
 }
 
 @media (min-width: 992px) {
+
   .cc-box-card-menu .cc-box-card .cc-ranking {
     background-image: url("../../assets/img/selo-gold.png");
     background-position: 10% -3%;
@@ -5829,6 +5830,12 @@ sidebar {
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+@media screen and (min-width: 992px) {
+  .li-none {
+      display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {
