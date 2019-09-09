@@ -5845,3 +5845,29 @@ sidebar {
   }
 
 }
+
+@media screen and (max-width: 380px) {
+
+  .container-box {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-areas: "a b" "c d" "e f"
+  }
+
+  .logo_parceiros_1, .logo_parceiros_2, .logo_parceiros_4 {
+    width: auto;
+    height: 70%;
+  }
+
+  .logo_parceiros_3, .logo_parceiros_5 {
+    width: auto;
+    height: 40%;
+  }
+
+  .navbar-brand {
+    width: 60%;
+  }
+}
+
+
