@@ -12,13 +12,19 @@ $(document).ready(function() {
     } else {
       var nTitle = 'Eixo <strong>' + sessionName + '</strong> de &nbsp;<span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>"</span>';
     }
-    console.log(sessionName)
+
     $('.cc-titulo-principal').html('');
     $('.cc-titulo-principal').html(nTitle);
 
     var categorias = $('#categorias .tab-pane');
 
     categorias.each(function (i, el) {
+
+      //let elem = document.getElementsByClassName('tab-pane');
+      //for (let i = 0; i < elem.length; i++) {
+        //if (elem[i].id == this.id)
+      //}
+
       $(this).removeClass('show');
       $(this).removeClass('active');
     });
