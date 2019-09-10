@@ -120,8 +120,59 @@ $(document).ready(function() {
       $(this).addClass("cc-active");
   });
 
+  //ao clicar no sidebar - IAN
+  $(document).on('click', '#v-pills-ian-tab', function (event) {
+
+    document.getElementById('infra-condicoes-urbanas').classList.remove("cc-eixo-active");
+    document.getElementById('infra-transporte').classList.remove("cc-eixo-active");
+    document.getElementById('infra-seguranca-publica').classList.remove("cc-eixo-active");
+
+    document.getElementById('merc-credito').classList.remove("cc-eixo-active");
+    document.getElementById('merc-diversidade-setorial').classList.remove("cc-eixo-active");
+    document.getElementById('merc-inovacao').classList.remove("cc-eixo-active");
+    document.getElementById('merc-tamanho-mercado').classList.remove("cc-eixo-active");
+
+    document.getElementById('caph-educacao').classList.remove("cc-eixo-active");
+    document.getElementById('caph-qualidade-mao-obra').classList.remove("cc-eixo-active");
+    document.getElementById('caph-saude').classList.remove("cc-eixo-active");
+
+    document.getElementById('gfiscal').classList.remove("cc-eixo-active");
+  });
+
+
+  //ao clicar no sidebar - Infraestrutura
+  $(document).on('click', '#v-pills-infra-tab', function (event) {
+
+    document.getElementById('infra-condicoes-urbanas').classList.add("cc-eixo-active");
+    document.getElementById('infra-transporte').classList.add("cc-eixo-active");
+    document.getElementById('infra-seguranca-publica').classList.add("cc-eixo-active");
+  });
+
+  //ao clicar no sidebar - Potencial de Mercado
+  $(document).on('click', '#v-pills-mercado-tab', function (event) {
+
+    document.getElementById('merc-credito').classList.add("cc-eixo-active");
+    document.getElementById('merc-diversidade-setorial').classList.add("cc-eixo-active");
+    document.getElementById('merc-inovacao').classList.add("cc-eixo-active");
+    document.getElementById('merc-tamanho-mercado').classList.add("cc-eixo-active");
+  });
+
+  //ao clicar no sidebar - Capital Humano
+  $(document).on('click', '#v-pills-humano-tab', function (event) {
+
+    document.getElementById('caph-educacao').classList.add("cc-eixo-active");
+    document.getElementById('caph-qualidade-mao-obra').classList.add("cc-eixo-active");
+    document.getElementById('caph-saude').classList.add("cc-eixo-active");
+  });
+
+  //ao clicar no sidebar - Gestao Fiscal
+  $(document).on('click', '#v-pills-fiscal-tab', function (event) {
+
+    document.getElementById('gfiscal').classList.add("cc-eixo-active");
+  });
+
   $(document).on('click', '.cc-btn-drop-eixo', function(event) {
-    var classe = $(this).find(".fa").attr("class");
+    var classe = $(this).find(".fa").attr("class"); //fa fa-plus ou fa fa-minus
     if(classe == "fa fa-plus"){
       classe = "fa-minus";
       $(this).closest(".cc-eixo").find(".cc-content").fadeIn("1000");
