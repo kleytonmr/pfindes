@@ -1783,7 +1783,7 @@ a {
 @media (min-width: 992px) {
   .cc-boneco-absoluto {
     position: absolute;
-    top: 150px;
+    top: 100px;
     max-width: 210px;
     opacity: 1;
   }
@@ -2587,7 +2587,14 @@ a {
 }
 
 .cc-redes-sociais .cc-box-menu .cc-main-menu li a img {
-  width: 100%;
+  width: auto;
+  height: 100%;
+}
+
+@media (max-width: 772px) {
+  .cc-redes-sociais .cc-box-menu .cc-main-menu li a img {
+    height: 8px;
+  }
 }
 
 @media (min-width: 576px) {
