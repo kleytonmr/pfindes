@@ -1058,11 +1058,11 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Condições urbanas</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-infra-condicoes-urbanas" class="fa fa-minus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
-                          <div id="infra-condicoes-urbanas" class="cc-content">
+                          <div id="infra-condicoes-urbanas" class="cc-content cc-eixo-active">
                             <div class="row">
 
                               <!-- ---------------------------Taxa de conexão--------------------------------- -->
@@ -1341,7 +1341,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Transporte</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-infra-transporte" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -1461,7 +1461,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Segurança Pública</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-infra-seguranca-publica" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -1569,7 +1569,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Acesso ao crédito</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-merc-credito" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -1659,7 +1659,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Diversidade setorial</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-merc-diversidade-setorial" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -1715,7 +1715,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Inovação</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-merc-inovacao" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -1839,7 +1839,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Tamanho de mercado</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-merc-tamanho-mercado" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -2043,7 +2043,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span id="">Educação</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-caph-educacao" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -2268,7 +2268,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span id="">Qualidade da mão de obra</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-caph-qualidade-mao-obra" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -2360,7 +2360,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span id="">Saúde</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-caph-saude" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -2467,7 +2467,7 @@
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
                               <span>Gestão fiscal</span>
                               <!-- -------------------------Titulo da sessão----------------------------------- -->
-                              <i class="fa fa-plus"></i>
+                              <i id="fa-gfiscal" class="fa fa-plus"></i>
                               <span class="cc-span-oculto"></span>
                             </button>
                           </div>
@@ -3623,14 +3623,14 @@
                         <label class="col-3">Nome*:</label>
                         <div class="col-9">
                           <input onchange="checkFilled();" class="form-control" type="text" id="doc_form_nome" name="nome" required oninvalid="this.setCustomValidity('Por favor, insira seu nome')">
-                          <small id="nomeHelp" class="form-text texto-light">Nome é obrigatório.</small>
+                          <small id="nomeHelp" class="form-text texto-light"></small>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="col-3">E-mail*:</label>
                         <div class="col-9">
                           <input onchange="checkFilled();" class="form-control" type="email" id="doc_form_email" name="email" required oninvalid="this.setCustomValidity('Por favor, insira um e-mail válido')">
-                          <small id="emailHelp" class="form-text texto-light">E-mail é obrigatório.</small>
+                          <small id="emailHelp" class="form-text texto-light"></small>
                         </div>
                       </div>
                       <div class="form-group row"><label class="col-3">Telefone:</label>
@@ -3641,6 +3641,14 @@
                           <button onclick="submit_doc_form()" class="btn btn-primary cc-submit" type="button">Acessar</button>
                         </div>
                       </div>
+
+                      <div class="form-group row">
+                        <label class="col-3"></label>
+                        <div class="col-9">
+                          <small class="form-text texto-light">*Campo Obrigatório</small>
+                        </div>
+                      </div>
+
                     </form>
 
                   </div>

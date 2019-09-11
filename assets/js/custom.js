@@ -126,55 +126,107 @@ $(document).ready(function() {
       $(this).addClass("cc-active");
   });
 
+
   //ao clicar no sidebar - IAN
   $(document).on('click', '#v-pills-ian-tab', function (event) {
 
-    document.getElementById('infra-condicoes-urbanas').classList.remove("cc-eixo-active");
     document.getElementById('infra-transporte').classList.remove("cc-eixo-active");
+    document.getElementById("fa-infra-transporte").classList.remove("fa-minus");
+    document.getElementById("fa-infra-transporte").classList.add("fa-plus");
+
     document.getElementById('infra-seguranca-publica').classList.remove("cc-eixo-active");
+    document.getElementById("fa-infra-seguranca-publica").classList.remove("fa-minus");
+    document.getElementById("fa-infra-seguranca-publica").classList.add("fa-plus");
+
+    document.getElementById("fa-infra-condicoes-urbanas").classList.remove("fa-plus"); //unico ativo
+    document.getElementById("fa-infra-condicoes-urbanas").classList.add("fa-minus"); //unico ativo
 
     document.getElementById('merc-credito').classList.remove("cc-eixo-active");
+    document.getElementById("fa-merc-credito").classList.remove("fa-minus");
+    document.getElementById("fa-merc-credito").classList.add("fa-plus");
+
     document.getElementById('merc-diversidade-setorial').classList.remove("cc-eixo-active");
+    document.getElementById("fa-merc-diversidade-setorial").classList.remove("fa-minus");
+    document.getElementById("fa-merc-diversidade-setorial").classList.add("fa-plus");
+
     document.getElementById('merc-inovacao').classList.remove("cc-eixo-active");
+    document.getElementById("fa-merc-inovacao").classList.remove("fa-minus");
+    document.getElementById("fa-merc-inovacao").classList.add("fa-plus");
+
     document.getElementById('merc-tamanho-mercado').classList.remove("cc-eixo-active");
+    document.getElementById("fa-merc-tamanho-mercado").classList.remove("fa-minus");
+    document.getElementById("fa-merc-tamanho-mercado").classList.add("fa-plus");
 
     document.getElementById('caph-educacao').classList.remove("cc-eixo-active");
+    document.getElementById("fa-caph-educacao").classList.remove("fa-minus");
+    document.getElementById("fa-caph-educacao").classList.add("fa-plus");
+
     document.getElementById('caph-qualidade-mao-obra').classList.remove("cc-eixo-active");
+    document.getElementById("fa-caph-qualidade-mao-obra").classList.remove("fa-minus");
+    document.getElementById("fa-caph-qualidade-mao-obra").classList.add("fa-plus");
+
     document.getElementById('caph-saude').classList.remove("cc-eixo-active");
+    document.getElementById("fa-caph-saude").classList.remove("fa-minus");
+    document.getElementById("fa-caph-saude").classList.add("fa-plus");
 
     document.getElementById('gfiscal').classList.remove("cc-eixo-active");
+    document.getElementById("fa-gfiscal").classList.remove("fa-minus");
+    document.getElementById("fa-gfiscal").classList.add("fa-plus");
   });
-
 
   //ao clicar no sidebar - Infraestrutura
   $(document).on('click', '#v-pills-infra-tab', function (event) {
-
     document.getElementById('infra-condicoes-urbanas').classList.add("cc-eixo-active");
     document.getElementById('infra-transporte').classList.add("cc-eixo-active");
+    document.getElementById("fa-infra-transporte").classList.remove("fa-plus");
+    document.getElementById("fa-infra-transporte").classList.add("fa-minus");
+
     document.getElementById('infra-seguranca-publica').classList.add("cc-eixo-active");
+    document.getElementById("fa-infra-seguranca-publica").classList.remove("fa-plus");
+    document.getElementById("fa-infra-seguranca-publica").classList.add("fa-minus");
+
   });
 
   //ao clicar no sidebar - Potencial de Mercado
   $(document).on('click', '#v-pills-mercado-tab', function (event) {
-
     document.getElementById('merc-credito').classList.add("cc-eixo-active");
+    document.getElementById("fa-merc-credito").classList.remove("fa-plus");
+    document.getElementById("fa-merc-credito").classList.add("fa-minus");
+
     document.getElementById('merc-diversidade-setorial').classList.add("cc-eixo-active");
+    document.getElementById("fa-merc-diversidade-setorial").classList.remove("fa-plus");
+    document.getElementById("fa-merc-diversidade-setorial").classList.add("fa-minus");
+
     document.getElementById('merc-inovacao').classList.add("cc-eixo-active");
+    document.getElementById("fa-merc-inovacao").classList.remove("fa-plus");
+    document.getElementById("fa-merc-inovacao").classList.add("fa-minus");
+
     document.getElementById('merc-tamanho-mercado').classList.add("cc-eixo-active");
+    document.getElementById("fa-merc-tamanho-mercado").classList.remove("fa-plus");
+    document.getElementById("fa-merc-tamanho-mercado").classList.add("fa-minus");
+
   });
 
   //ao clicar no sidebar - Capital Humano
   $(document).on('click', '#v-pills-humano-tab', function (event) {
-
     document.getElementById('caph-educacao').classList.add("cc-eixo-active");
+    document.getElementById("fa-caph-educacao").classList.remove("fa-plus");
+    document.getElementById("fa-caph-educacao").classList.add("fa-minus");
+
     document.getElementById('caph-qualidade-mao-obra').classList.add("cc-eixo-active");
+    document.getElementById("fa-caph-qualidade-mao-obra").classList.remove("fa-plus");
+    document.getElementById("fa-caph-qualidade-mao-obra").classList.add("fa-minus");
+
     document.getElementById('caph-saude').classList.add("cc-eixo-active");
+    document.getElementById("fa-caph-saude").classList.remove("fa-plus");
+    document.getElementById("fa-caph-saude").classList.add("fa-minus");
   });
 
   //ao clicar no sidebar - Gestao Fiscal
   $(document).on('click', '#v-pills-fiscal-tab', function (event) {
-
     document.getElementById('gfiscal').classList.add("cc-eixo-active");
+    document.getElementById("fa-gfiscal").classList.remove("fa-plus");
+    document.getElementById("fa-gfiscal").classList.add("fa-minus");
   });
 
   $(document).on('click', '.cc-btn-drop-eixo', function(event) {
