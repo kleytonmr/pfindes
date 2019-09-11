@@ -1504,6 +1504,7 @@ a {
   text-transform: uppercase;
   max-width: 202px;
   min-width: 201px;
+  min-height: 47px;
   margin-bottom: 30px;
 }
 
