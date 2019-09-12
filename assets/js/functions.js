@@ -133,8 +133,18 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
 
+
+
       $(keys).each(function (i, keyName) {
         buildCategoriesSliderRuler(keyName);
+
+        //detecta se a variavel está vazia
+        if (municipio.keyName === undefined) {
+          //altera o ideb_med_15_19y em especifico
+          $("span[id*='ideb_med_15_19y']").each(function (i, e) {
+            $(this).text(' - ');
+          });
+        }
         var keyTerms = keyName.toString().split('_');
         if (keyTerms[0] === 'pr') {
           keyTerms.shift();
@@ -145,6 +155,9 @@ function populeMunicipioData(idMunicipio) {
 
       $(keys).each(function (i, name) {
         var value = municipio[name];
+
+
+
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
           var nValue = parseFloat(value).toFixed(1);
@@ -165,6 +178,7 @@ function populeMunicipioData(idMunicipio) {
       $("span[id*='ran_']").each(function (i, e) {
         $(this).text(parseInt($(e).text()));
       });
+
     }
   });
 }
@@ -804,9 +818,6 @@ $(document).ready(function() {
   }, 1000);
 
 });
-
-
-
 
 /* inicio validação formulario # eric */
 function checkFilled() {

@@ -273,4 +273,5 @@ $(document).ready(function() {
     $(resumo).data("carousel-content", aux);
   });
 
+
 });
