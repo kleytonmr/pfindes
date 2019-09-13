@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Ideies</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/nouislider.css">
+</head>
+
+<body>
+  <div id="cc-conteudo">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+              <div class="cc-regua">
+                  <div class="cc-alinha-items">
+                    <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-roxo">Menor do cluster</span><span id="cmin_ian" class="cc-valor cc-cor-roxo">1,2</span></div>
+                      <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span><span id="cmed_ian" class="cc-valor cc-cor-cinza">1,2</span></div>
+                      <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-marrom municipioName">Vitória</span><span id="cpos_ian" class="cc-valor cc-cor-marrom">1,2</span></div>
+                      <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-roxo">Maior do cluster</span><span id="cmax_ian" class="cc-valor cc-cor-roxo">1,2</span></div>
+                  </div>
+                  <div class="cc-linha"></div>
+              </div>
+            </div>
+      </div>
+
+      <div id="slider">
+      </div>
+    </div>
+
+  </div>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/nouislider.js"></script>
+
+  <script>
+
+      var slider = document.getElementById('slider');
+
+      noUiSlider.create(slider, {
+          start: [2, 4, 6, 8],
+          range: {
+            'min': [0],
+            'max': [10]
+          }
+      });
+
+      slider.setAttribute('disabled', true);
+
+  </script>
+  </body>
+
+</html>
