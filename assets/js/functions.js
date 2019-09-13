@@ -137,12 +137,14 @@ function populeMunicipioData(idMunicipio) {
 
       $(keys).each(function (i, keyName) {
         buildCategoriesSliderRuler(keyName);
-
         //detecta se a variavel está vazia
         if (municipio.keyName === undefined) {
           //altera o ideb_med_15_19y em especifico
           $("span[id*='ideb_med_15_19y']").each(function (i, e) {
             $(this).text(' - ');
+          });
+          $("p[class*='texto2']").each(function (i, e) {
+            $(this).text(' ');
           });
         }
         var keyTerms = keyName.toString().split('_');
@@ -155,8 +157,6 @@ function populeMunicipioData(idMunicipio) {
 
       $(keys).each(function (i, name) {
         var value = municipio[name];
-
-
 
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
@@ -543,7 +543,7 @@ function populateTexts(data) {
 
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
-    texto1.html(municipio['texto1_ian']);
+    texto1.html(municipio['texto1_ian']);    
     texto2.html(municipio['texto2_ian']);
   }
   if (session === 'infraestrutura') {
@@ -561,8 +561,8 @@ function populateTexts(data) {
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
+    
   }
-
 }
 //inicio da terceira regua
 function buildCategoriesSliderRuler(keyName) {
