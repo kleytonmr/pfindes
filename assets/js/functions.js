@@ -545,23 +545,27 @@ function populateTexts(data) {
     // TODO: Add variáveis texto ian
     texto1.html(municipio['texto1_ian']);    
     texto2.html(municipio['texto2_ian']);
+    populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
+    populaCarousel(vitoria_es, cachoeiro_de_itapemirim_es, belo_horizonte_mg, curvelo_mg, parcerias_publico_privadas);
+  }  
+  if (session === 'capital humano') {
+    texto1.html(municipio['texto1_capital_humano']);
+    texto2.html(municipio['texto2_capital_humano']);
+    populaCarousel(sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
   }
   if (session === 'potencial de mercado') {
     texto1.html(municipio['texto1_potencial_de_mercado']);
     texto2.html(municipio['texto2_potencial_de_mercado']);
-  }
-  if (session === 'capital humano') {
-    texto1.html(municipio['texto1_capital_humano']);
-    texto2.html(municipio['texto2_capital_humano']);
+    populaCarousel(sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
-    
+    populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);
   }
 }
 //inicio da terceira regua
@@ -913,15 +917,181 @@ function validation() {
 /* fim validação formulario # eric */
 
 /* inicio exibição carrosel dos temas # eric */
+//inicia o array com as cidades
 
-function active_custom_carousel_1(cidade) {
-  var getClassCarousel = document.getElementsByClassName("carousel-1-"+cidade);
-  if (cidades_carrosel.includes(cidade) == false) { //cidade nao esta no array
-    cidades_carrosel.push(cidade);
+var vitoria_es = {
+  nome:'Vitória - ES',
+  resumo:'Com a finalidade de reduzir a alta taxa de homicídios, Vitória passou por uma reestruturação.',
+  resumo_comp:'Com a finalidade de reduzir a alta taxa de homicídios, Vitória passou por uma reestruturação. A cidade criou um arranjo institucional que fosse capaz de coordenar os projetos de segurança pública. Além disso, obteve êxito nos programas preventivos, reduzindo a taxa de homicídios de 81 por 100 mil habitantes no início dos anos 2000 para 17 por 100 mil habitantes, em 2016.',
+  src:'assets/img/carousel-vitoria-es.jpg'
+}
+
+var vila_pavao_es = {
+  nome:"Vila Pavão - ES",
+  resumo:"O município de Vila Pavão/ES obteve destaque na rápida evolução da nota do IDEB para o ensino fundamental (anos iniciais 1º ao 5º ano).",
+  resumo_comp:"O município de Vila Pavão/ES obteve destaque na rápida evolução da nota do IDEB para o ensino fundamental (anos iniciais 1º ao 5º ano). Em 2009, o município ocupava a posição 2010º no ranking dos municípios brasileiros e a 38º entre os municípios do estado. Já em 2017, o município alcançou a posição 573º no ranking nacional e a 1º colocação no ranking estadual. Além disso, o município possui a nota média de 6,8 pontos, superior à meta nacional para 2021, de 5,8 pontos.",
+  src:"assets/img/carousel-vila-pavao-es.jpg"
+}
+
+var juazeiro_do_norte_ce = {
+  nome:"Juazeiro do norte - CE",
+  resumo:"A primeira lei municipal de inovação e Smart Cities foi sancionada em Juazeiro/CE com a pretensão de tornar o município uma cidade inteligente.",
+  resumo_comp:"A primeira lei municipal de inovação e Smart Cities foi sancionada em Juazeiro/CE. Com a pretensão de tornar o município uma cidade inteligente, a lei garante segurança jurídica para as ações que vem sendo desenvolvidas na área de inovação, representando um grande passo para o fomento de iniciativas inovadores e modernização dos serviços públicos.",
+  src:"assets/img/carousel-juazeiro-ce.jpg"
+}
+
+var niteroi_rj = {
+  nome:"Niterói - RJ",
+  resumo:"De acordo com o Índice Firjan de Gestão Fiscal (IFGF), a cidade de Niterói ficou em 6º no ranking nacional de gestão fiscal.",
+  resumo_comp:"De acordo com o Índice Firjan de Gestão Fiscal (IFGF), a cidade de Niterói ficou em 6º no ranking nacional de gestão fiscal. O que mais impressiona é que em 2012, o município ocupava a posição 2.188º. A gestão da prefeitura promoveu 67 medidas de ajustes fiscal, implantou sistema de monitoramento para ampliar as receitas provenientes de ICMS, além de aumentar a capacidade de investimento via Parcerias Público Privadas (PPPs).",
+  src:"assets/img/carousel-niteroi-rj.jpg"
+}
+
+var cachoeiro_de_itapemirim_es = {
+  nome:"Cachoeiro de Itapemirim - ES",
+  resumo:"A cidade foi a pioneira no Brasil a conceder os serviços de abastecimento de água e tratamento de esgoto para a iniciativa privada.",
+  resumo_comp:"A cidade foi a pioneira no Brasil a conceder os serviços de abastecimento de água e tratamento de esgoto para a iniciativa privada. Hoje, o município é referência no país em saneamento. Em 2003 o município tratava 9,7% do esgoto, e, em 2017, passou a tratar 98,6%.",
+  src:"assets/img/carousel-cachoeiro-de-itapemirim-es.jpg"
+}
+
+var belo_horizonte_mg = {
+  nome:"Belo Horizonte - MG",
+  resumo:"A cidade de Belo Horizonte foi a primeira capital a formalizar um contrato de PPP de iluminação pública.",
+  resumo_comp:"A cidade de Belo Horizonte foi a primeira capital a formalizar um contrato de PPP de iluminação pública, prevendo a substituição de 182 mil pontos de luz da cidade por luminárias LED. A troca ocorrerá primeiro nas regiões de maior vulnerabilidade social, com previsão de conclusão em três anos.",
+  src:"assets/img/carousel-belo-horizonte-mg.jpg"
+}
+
+var curvelo_mg = {
+  nome:"Curvelo - MG",
+  resumo:"O tema mobilidade urbana também está presente nas políticas públicas das cidades de pequeno porte.",
+  resumo_comp:"O tema mobilidade urbana também está presente nas políticas públicas das cidades de pequeno porte. Com um diagnóstico diferente de grandes cidades, o município de Curvelo/MG planejou sua mobilidade urbana para reduzir o tempo de espera pelos coletivos, ampliar a qualidade e diminuir a falta de acesso ao transporte público. A cidade foi premiada com o primeiro lugar na categoria mobilidade da pesquisa Connected Smart Cities.",
+  src:"assets/img/carousel-curvelo-mg.jpg"
+}
+
+var parcerias_publico_privadas = {
+  nome:"Parcerias Público Privadas",
+  resumo:"Como viabilizar projetos de parcerias público privadas em nível municipal? A melhoria do ambiente de negócios...",
+  resumo_comp:"Como viabilizar projetos de parcerias público privadas em nível municipal? A melhoria do ambiente de negócios dos municípios passa pelo investimento em infraestrutura e maior aproximação com a iniciativa privada.",
+  src:"assets/img/carousel-ppp.jpg"
+}
+
+var sobral_ce = {
+  nome:"Sobral - CE",
+  resumo:"Sobral/CE possui o melhor ensino fundamental (anos iniciais 1º ao 5º ano) do país. Em 2017, o município alcançou a média 9,1 pontos na avaliação do IDEB.",
+  resumo_comp:"Sobral/CE possui o melhor ensino fundamental (anos iniciais 1º ao 5º ano) do país. Em 2017, o município alcançou a média 9,1 pontos na avaliação do IDEB. O município apostou na melhoria do seu capital humano com fortalecimento da gestão escolar, da ação pedagógica e da valorização do magistério.",
+  src:"assets/img/carousel-sobral-ce.jpg"
+}
+
+var participacao_da_sociedade = {
+  nome:"Participacao da Sociedade",
+  resumo:"A administração pública conta com um importante instrumento no processo de elaboração, gestão e avaliação de políticas públicas.",
+  resumo_comp:"A administração pública conta com um importante instrumento no processo de elaboração, gestão e avaliação de políticas públicas. Apesar de pouco explorado, a participação da sociedade pode direcionar a gestão na implantação das atividades da vida pública, e coloca o cidadão no centro das decisões estratégicas da gestão pública, além de garantir um sentimento de pertencimento da sociedade com as diretrizes da administração pública.",
+  src:"assets/img/carousel-participacao.jpg"
+}
+
+var oeiras_pi = {
+  nome:"Oeiras - PI",
+  resumo:"Oeiras, no Piauí, obteve destaque no campo educacional devido a rápida evolução na avaliação do ensino fundamental (anos iniciais 1º ao 5º ano) no IDEB.",
+  resumo_comp:"Oeiras, no Piauí, obteve destaque no campo educacional devido a rápida evolução na avaliação do ensino fundamental (anos iniciais 1º ao 5º ano) no IDEB. Em 2013 a nota da cidade foi de 4,1 pontos e em 2017 subiu para 7,1 pontos. Nota-se que a nota de Oeiras está acima da meta nacional para a rede pública em 2021, de 5,8 pontos. A gestão do município apostou no sistema de avaliação, além de criar uma sinergia entre professores, alunos e a comunidade.",
+  src:"assets/img/carousel-oeiras-pi.jpg"
+}
+
+var sao_paulo_sp = {
+  nome:"São Paulo - SP",
+  resumo:"O município de São Paulo possui um processo de abertura de empresas totalmente automatizado.",
+  resumo_comp:"O município de São Paulo possui um processo de abertura de empresas totalmente automatizado. Os procedimentos para esse fim podem ser realizados por meio de um sistema online, no caso das empresas que desenvolvem atividades de baixo risco. O tempo médio para abertura de uma empresa saiu de 101 dias para 18 dias.",
+  src:"assets/img/carousel-sao-paulo-sp.jpg"
+}
+
+var fortaleza_ce = {
+  nome:"Fortaleza - CE",
+  resumo:"Com a finalidade de desburocratizar os processos pertinentes à abertura de empresas, a cidade de Fortaleza/CE implementou medidas simples.",
+  resumo_comp:"Com a finalidade de desburocratizar os processos pertinentes à abertura de empresas, a cidade de Fortaleza/CE implementou medidas simples e que fizeram o município subir 30 posições no quesito tempo de processos, no ranking de cidades empreendedoras da Endeavor, em 2017. Entre as mudanças, a cidade implementou a adoção de alvarás de construção online.",
+  src:"assets/img/carousel-fortaleza-ce.jpg"
+}
+
+var sao_bernardo_do_campo_sp = {
+  nome:"São Bernardo do Campo - SP",
+  resumo:"A cidade da região metropolitana de São Paulo desenvolveu uma aproximação maior com o cidadão.",
+  resumo_comp:"A cidade da região metropolitana de São Paulo desenvolveu uma aproximação maior com o cidadão. A gestão municipal oferece mais de 150 serviços digitais, entre alvarás de construção e funcionamento, revisão de IPTU e cadastro de locomoção de balsas. A iniciativa tem por finalidade facilitar a interação com os cidadãos, além da promoção dos serviços públicos.",
+  src:"assets/img/carousel-sao-bernardo-do-campo-sp.jpg"
+}
+
+var caruaru_pe = {
+  nome:"Caruaru - PE",
+  resumo:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE.",
+  resumo_comp:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE. A unidade possui infraestrutura necessária para auxiliar empreendedores no desenvolvimento de suas ideias. Em 2016 foi considerado como uma das 10 soluções mais inovadoras do mundo, segundo a IASP (Associação Internacional de Parques Tecnológicos e Áreas de Inovação).",
+  src:"assets/img/carousel-caruaru-pe.jpg"
+}
+
+var transparencia = {
+  nome:"Transparência",
+  resumo:"Os municípios estão sujeitos a exigência legal de serem transparentes com relação às contas públicas.",
+  resumo_comp:"Os municípios estão sujeitos a exigência legal de serem transparentes com relação às contas públicas. Mas para além dessa exigência legal, a gestão municipal cada vez mais transparente, com livre acesso aos processos que norteiam a formulação das políticas públicas, induz a sociedade a ser mais participativa, o que promove o engajamento social local.",
+  src:"assets/img/carousel-transparencia.jpg"
+}
+
+var consorcios_intermunicipais = {
+  nome:"Consórcios Intermunicipais",
+  resumo:"Os consórcios entre municípios aparecem como uma alternativa aos gestores públicos para viabilizar projetos com escala produtiva e financeira mais ampla do que um município individual poderia suportar.",
+  resumo_comp:"Os consórcios entre municípios aparecem como uma alternativa aos gestores públicos para viabilizar projetos com escala produtiva e financeira mais ampla do que um município individual poderia suportar. Os principais consórcios intermunicipais conhecidos são focados em saneamento, construção de estradas e saúde pública.",
+  src:"assets/img/carousel-consorcio.jpg"
+}
+
+var regulacao = {
+  nome:"Regulação",
+  resumo:"A prefeitura possui competência para regular serviços de alto impacto na economia e no bem-estar da população.",
+  resumo_comp:"A prefeitura possui competência para regular serviços de alto impacto na economia e no bem-estar da população. Uma gestão pública alinhada com boas práticas regulatórias possui a capacidade de estimular um ambiente de negócios mais favorável à atividade econômica.",
+  src:"assets/img/carousel-regulacao.jpg"
+}
+
+function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
+
+  //primeira cidade
+    document.getElementById("cc-nome-1").innerHTML = tema_1.nome;
+    document.getElementById("cc-resumo-1").innerHTML = tema_1.resumo;
+    document.getElementById("cc-resumo-1").dataset.carouselContent = tema_1.resumo_comp;
+    document.getElementById("carousel-img-1").style.backgroundImage = "url('"+tema_1.src+"')";
+
+    
+
+    //segunda cidade
+    document.getElementById("cc-nome-2").innerHTML = tema_2.nome;
+    document.getElementById("cc-resumo-2").innerHTML = tema_2.resumo;
+    document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
+    document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
+
+    //terceira cidade
+    document.getElementById("cc-nome-3").innerHTML = tema_3.nome;
+    document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo;
+    document.getElementById("cc-resumo-3").dataset.carouselContent = tema_3.resumo_comp;
+    document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
+
+    //quarta cidade
+    document.getElementById("cc-nome-4").innerHTML = tema_4.nome;
+    document.getElementById("cc-resumo-4").innerHTML = tema_4.resumo;
+    document.getElementById("cc-resumo-4").dataset.carouselContent = tema_4.resumo_comp;
+    document.getElementById("carousel-img-4").style.backgroundImage = "url('"+tema_4.src+"')";
+
+    //quinta cidade
+    document.getElementById("cc-nome-5").innerHTML = tema_5.nome;
+    document.getElementById("cc-resumo-5").innerHTML = tema_5.resumo;
+    document.getElementById("cc-resumo-5").dataset.carouselContent = tema_5.resumo_comp;
+    document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
+  
+}
+
+// Tema de acordo com o IAN
+//populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
+
+function active_custom_carousel_1(cidade_num) {
+  var getClassCarousel = document.getElementsByClassName("carousel-"+cidade_num+"-boas-praticas");
+  if (cidades_carrosel.includes(cidade_num) == false) { //cidade nao esta no array
+    cidades_carrosel.push(cidade_num);
     $(getClassCarousel).height(515);
   } else {                                          //cidade esta no array
     for (let i = 0; i < 5; i++) {                   //busca a cidade no array
-      if (cidades_carrosel[i] === cidade) {         //encontrou a cidade no array
+      if (cidades_carrosel[i] === cidade_num) {         //encontrou a cidade no array
         cidades_carrosel.splice(i, 1);              //remove cidade do array
         $(getClassCarousel).height(375);
       }
