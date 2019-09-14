@@ -545,23 +545,27 @@ function populateTexts(data) {
     // TODO: Add variáveis texto ian
     texto1.html(municipio['texto1_ian']);    
     texto2.html(municipio['texto2_ian']);
+    populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
+    populaCarousel(vitoria_es, cachoeiro_de_itapemirim_es, belo_horizonte_mg, curvelo_mg, parcerias_publico_privadas);
   }
   if (session === 'potencial de mercado') {
     texto1.html(municipio['texto1_potencial_de_mercado']);
     texto2.html(municipio['texto2_potencial_de_mercado']);
+    populaCarousel(sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
   }
   if (session === 'capital humano') {
     texto1.html(municipio['texto1_capital_humano']);
     texto2.html(municipio['texto2_capital_humano']);
+    populaCarousel(sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
-    
+    populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
 //inicio da terceira regua
@@ -1075,8 +1079,6 @@ function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
   
 }
-
-populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
 
 function active_custom_carousel_1(cidade_num) {
   var getClassCarousel = document.getElementsByClassName("carousel-"+cidade_num+"-boas-praticas");
