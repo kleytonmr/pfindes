@@ -2630,6 +2630,17 @@ a {
   margin-bottom: 20px;
 }
 
+.cc-rodape-txt {
+  bottom: 0px;
+  position: absolute;
+}
+
+.cc-rodape-txt a {
+  text-decoration: none;  
+  color: #2A3091;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .cc-case-praticas .cc-box-conteudo .cc-cabecalho-drop .cc-box-imagem {
     width: 100%;
@@ -5228,6 +5239,8 @@ sidebar {
   line-height: 22px;
   padding: 10px;
   border-radius: 0 0 5px 5px;
+  min-height: 120px;
+  max-width: 315px;
 }
 
 .cc-custom-carousel-1 .cc-box-descricao .cc-header{

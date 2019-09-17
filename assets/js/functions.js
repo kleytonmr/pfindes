@@ -545,26 +545,36 @@ function populateTexts(data) {
     // TODO: Add variáveis texto ian
     texto1.html(municipio['texto1_ian']);    
     texto2.html(municipio['texto2_ian']);
+
+    //att boas praticas
     populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
+
+    //att boas praticas
     populaCarousel(vitoria_es, cachoeiro_de_itapemirim_es, belo_horizonte_mg, curvelo_mg, parcerias_publico_privadas);
   }
   if (session === 'potencial de mercado') {
     texto1.html(municipio['texto1_potencial_de_mercado']);
     texto2.html(municipio['texto2_potencial_de_mercado']);
+
+    //att boas praticas
     populaCarousel(sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
   }
   if (session === 'capital humano') {
     texto1.html(municipio['texto1_capital_humano']);
     texto2.html(municipio['texto2_capital_humano']);
+
+    //att boas praticas
     populaCarousel(sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
+
+    //att boas praticas
     populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
@@ -918,6 +928,8 @@ function validation() {
 
 /* inicio exibição carrosel dos temas # eric */
 //inicia o array com as cidades
+//att boas praticas
+
 var vitoria_es = {
   nome:'Vitória - ES',
   resumo:'Com a finalidade de reduzir a alta taxa de homicídios, Vitória passou por uma reestruturação.',
@@ -1044,39 +1056,39 @@ var regulacao = {
   src:"assets/img/carousel-regulacao.jpg"
 }
 
+
+
 function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
 
   //primeira cidade
-    document.getElementById("cc-nome-1").innerHTML = tema_1.nome;
-    document.getElementById("cc-resumo-1").innerHTML = tema_1.resumo;
-    document.getElementById("cc-resumo-1").dataset.carouselContent = tema_1.resumo_comp;
-    document.getElementById("carousel-img-1").style.backgroundImage = "url('"+tema_1.src+"')";
+  document.getElementById("cc-nome-1").innerHTML = tema_1.nome;
+  document.getElementById("cc-resumo-1").innerHTML = tema_1.resumo;
+  document.getElementById("cc-resumo-1").dataset.carouselContent = tema_1.resumo_comp;
+  document.getElementById("carousel-img-1").style.backgroundImage = "url('"+tema_1.src+"')";    
 
-    
+  //segunda cidade
+  document.getElementById("cc-nome-2").innerHTML = tema_2.nome;
+  document.getElementById("cc-resumo-2").innerHTML = tema_2.resumo;
+  document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
+  document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
 
-    //segunda cidade
-    document.getElementById("cc-nome-2").innerHTML = tema_2.nome;
-    document.getElementById("cc-resumo-2").innerHTML = tema_2.resumo;
-    document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
-    document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
+  //terceira cidade
+  document.getElementById("cc-nome-3").innerHTML = tema_3.nome;
+  document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo;
+  document.getElementById("cc-resumo-3").dataset.carouselContent = tema_3.resumo_comp;
+  document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
 
-    //terceira cidade
-    document.getElementById("cc-nome-3").innerHTML = tema_3.nome;
-    document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo;
-    document.getElementById("cc-resumo-3").dataset.carouselContent = tema_3.resumo_comp;
-    document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
+  //quarta cidade
+  document.getElementById("cc-nome-4").innerHTML = tema_4.nome;
+  document.getElementById("cc-resumo-4").innerHTML = tema_4.resumo;
+  document.getElementById("cc-resumo-4").dataset.carouselContent = tema_4.resumo_comp;
+  document.getElementById("carousel-img-4").style.backgroundImage = "url('"+tema_4.src+"')";
 
-    //quarta cidade
-    document.getElementById("cc-nome-4").innerHTML = tema_4.nome;
-    document.getElementById("cc-resumo-4").innerHTML = tema_4.resumo;
-    document.getElementById("cc-resumo-4").dataset.carouselContent = tema_4.resumo_comp;
-    document.getElementById("carousel-img-4").style.backgroundImage = "url('"+tema_4.src+"')";
-
-    //quinta cidade
-    document.getElementById("cc-nome-5").innerHTML = tema_5.nome;
-    document.getElementById("cc-resumo-5").innerHTML = tema_5.resumo;
-    document.getElementById("cc-resumo-5").dataset.carouselContent = tema_5.resumo_comp;
-    document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
+  //quinta cidade
+  document.getElementById("cc-nome-5").innerHTML = tema_5.nome;
+  document.getElementById("cc-resumo-5").innerHTML = tema_5.resumo;
+  document.getElementById("cc-resumo-5").dataset.carouselContent = tema_5.resumo_comp;
+  document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
   
 }
 
@@ -1086,7 +1098,7 @@ function active_custom_carousel_1(cidade_num) {
     cidades_carrosel.push(cidade_num);
     $(getClassCarousel).height(515);
   } else {                                          //cidade esta no array
-    for (let i = 0; i < 5; i++) {                   //busca a cidade no array
+    for (let i = 0; i < 4; i++) {                   //busca a cidade no array
       if (cidades_carrosel[i] === cidade_num) {         //encontrou a cidade no array
         cidades_carrosel.splice(i, 1);              //remove cidade do array
         $(getClassCarousel).height(375);

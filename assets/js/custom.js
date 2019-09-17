@@ -52,6 +52,8 @@ $(document).ready(function() {
     arrows:!1,
     centerMode:!0,
     autoplay:!0,
+    infinite:false,
+    initialSlide: 1,
     responsive:[
       {
         breakpoint:1200,
@@ -59,7 +61,8 @@ $(document).ready(function() {
           centerPadding:"0px"
           ,arrows:!1,
           slidesToShow:2,
-          infinite:!1
+          infinite:false,
+          initialSlide: 1
         }
       },
       {
@@ -68,7 +71,8 @@ $(document).ready(function() {
           centerPadding:"0px"
           ,arrows:!1,
           slidesToShow:1,
-          infinite:!1
+          infinite:false,
+          initialSlide: 1
         }
       }
     ]
