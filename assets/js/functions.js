@@ -240,10 +240,10 @@ function populateMainRulerValues(municipio) {
 function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   var mainslider = document.getElementById('main-slider');
 
-  $('#menor-val-cl').text(parseFloat(menorVal).toFixed(1));
-  $('#media-val-cl').text(parseFloat(medVal).toFixed(1));
-  $('#munic-val-cl').text(parseFloat(municVal).toFixed(1));
-  $('#maior-val-cl').text(parseFloat(maiorVal).toFixed(1));
+  $('#menor-val-cl').text(parseFloat(menorVal).toFixed(2));
+  $('#media-val-cl').text(parseFloat(medVal).toFixed(2));
+  $('#munic-val-cl').text(parseFloat(municVal).toFixed(2));
+  $('#maior-val-cl').text(parseFloat(maiorVal).toFixed(2));
 
   var vf_min = 0.5;
   var vf_max = 9.5;
