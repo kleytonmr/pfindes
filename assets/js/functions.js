@@ -160,8 +160,17 @@ function populeMunicipioData(idMunicipio) {
 
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
-          var nValue = parseFloat(value).toFixed(1);
+          var nValue;
           var prefix = name.toString().split('_')[0];
+          
+          if ((prefix === 'gestfin') || (prefix === 'caph') || (prefix === 'merc') || (prefix === 'infra') || (prefix === 'ian')) {    
+            nValue = parseFloat(value).toFixed(2);
+          } else {
+            nValue = parseFloat(value).toFixed(1);
+          }
+
+          console.log(nValue)
+
           if (prefix === 'cpos'){
             nValue = parseInt(nValue).toString() + '\u00BA';
           }
@@ -299,7 +308,7 @@ function setEstadualMapValues(municipio) {
   if (municipio) {
 
     //  variável: ian
-    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(2));
     //  variável: pos_ian
     $('#ranking')         .html(parseInt(municipio.pos_ian,));
 

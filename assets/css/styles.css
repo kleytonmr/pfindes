@@ -115,7 +115,8 @@ a {
   margin-left: 5px;
   margin-top: 7px;
   margin-bottom: auto;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 21px;
 }
 
 .img-fluid-mobile {
@@ -225,6 +226,14 @@ a {
 
 @media (min-width: 992px) {
 
+  #sidebar .cc-box-card-menu .cc-box-card .cc-ranking {
+
+    width: 39.1px;
+    height: 39.1px;
+    line-height: 30px;
+    font-size: 14px
+  }
+
   .cc-box-card-menu .cc-box-card .cc-ranking {
     background-image: url("../../assets/img/selo-gold.png");
     background-position: 10% -3%;
@@ -240,7 +249,7 @@ a {
     margin-left: 5px;
     margin-right: -7px;
     margin-top: -10px;
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
@@ -267,8 +276,8 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 34px;
-    width: 34px;
+    width: 39.1px;
+    width: 39.1px;
     float: right;
     text-align: center;
     color: #fff;
@@ -276,7 +285,8 @@ a {
     font-weight: 700;
     margin-left: 5px;
     margin-top: -10px;
-    font-size: 17px;
+    font-size: 14px;
+    line-height: 30px;
   }
 }
 
@@ -305,8 +315,8 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 34px;
-    height: 34px;
+    width: 39.1px;
+    height: 39.1px;
     float: right;
     text-align: center;
     color: #fff;
@@ -314,7 +324,8 @@ a {
     font-weight: 700;
     margin-left: 5px;
     margin-top: -10px;
-    font-size: 17px;
+    font-size: 14px;
+    line-height: 30px;
   }
 }
 
@@ -4418,8 +4429,8 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 26px;
-  height: 26px;
+  width: 31px;
+  height: 31px;
   float: right;
   text-align: center;
   color: #fff;
@@ -4427,6 +4438,7 @@ a {
   font-weight: 700;
   margin-left: 5px;
   font-size: 11px;
+  line-height: 21px;
 }
 
 @media (min-width: 576px) {
@@ -4435,15 +4447,16 @@ a {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     float: right;
     text-align: center;
     color: #fff;
     padding: 5px;
     font-weight: 700;
     margin-left: 5px;
-    font-size: 17px;
+    font-size: 14px;
+    line-height: 28px;
   }
 }
 
@@ -4452,8 +4465,8 @@ a {
   background-position: 10% -3%;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 26px;
-  height: 26px;
+  width: 31px;
+  height: 31px;
   float: right;
   text-align: center;
   color: #fff;
@@ -4461,6 +4474,7 @@ a {
   font-weight: 700;
   margin-left: 5px;
   font-size: 11px;
+  line-height: 31px;
 }
 
 @media (min-width: 576px) {
@@ -4469,15 +4483,16 @@ a {
     background-position: 10% -3%;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     float: right;
     text-align: center;
     color: #fff;
     padding: 5px;
     font-weight: 700;
     margin-left: 5px;
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 
@@ -4745,16 +4760,17 @@ a {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 34px;
+  width: 39.1px;
   text-align: center;
   color: #fff;
   padding: 5px;
   font-weight: 700;
   margin-left: 5px;
   margin-top: -10px;
-  font-size: 17px;
+  font-size: 14px;
   position: absolute;
   right: 45px;
+  line-height: 30px;
 }
 
 #cc-section-ian .cc-box-conteudo .cc-custom-row {
