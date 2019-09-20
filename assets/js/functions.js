@@ -133,8 +133,6 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
 
-
-
       $(keys).each(function (i, keyName) {
         buildCategoriesSliderRuler(keyName);
         //detecta se a variavel está vazia
@@ -143,6 +141,7 @@ function populeMunicipioData(idMunicipio) {
           $("span[id*='ideb_med_15_19y']").each(function (i, e) {
             $(this).text(' - ');
           });
+          //altera o texto2 em especifico
           $("p[class*='texto2']").each(function (i, e) {
             $(this).text(' ');
           });
@@ -160,7 +159,8 @@ function populeMunicipioData(idMunicipio) {
 
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
-          var nValue;
+          var nValue;          
+          nValueData = parseFloat(value).toFixed(1);
           var prefix = name.toString().split('_')[0];
           
           if ((prefix === 'gestfin') || (prefix === 'caph') || (prefix === 'merc') || (prefix === 'infra') || (prefix === 'ian')) {    
@@ -169,12 +169,16 @@ function populeMunicipioData(idMunicipio) {
             nValue = parseFloat(value).toFixed(1);
           }
 
-          console.log(nValue)
-
           if (prefix === 'cpos'){
             nValue = parseInt(nValue).toString() + '\u00BA';
           }
+
+          //indicadores com 2 casas decimais
           $('span[data-'+ name +']').html(nValue.replace(".", ","));
+
+          //inicio indicadores com 1 casa decimal (ultimo card)
+          $('span[data-i-'+ name +']').html(nValueData.replace(".", ","));
+          
         } else {
           $('#' + name).html(value);
           if (name === 'munic'){
@@ -587,7 +591,7 @@ function populateTexts(data) {
     populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
-//inicio da terceira regua
+//inicio da segunda regua
 function buildCategoriesSliderRuler(keyName) {
   var slider = document.getElementById('slider_' + keyName);
 
