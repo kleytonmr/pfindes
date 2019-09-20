@@ -133,8 +133,6 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
 
-
-
       $(keys).each(function (i, keyName) {
         buildCategoriesSliderRuler(keyName);
         //detecta se a variavel está vazia
@@ -143,6 +141,7 @@ function populeMunicipioData(idMunicipio) {
           $("span[id*='ideb_med_15_19y']").each(function (i, e) {
             $(this).text(' - ');
           });
+          //altera o texto2 em especifico
           $("p[class*='texto2']").each(function (i, e) {
             $(this).text(' ');
           });
@@ -160,7 +159,8 @@ function populeMunicipioData(idMunicipio) {
 
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
-          var nValue;
+          var nValue;          
+          nValueData = parseFloat(value).toFixed(1);
           var prefix = name.toString().split('_')[0];
           
           if ((prefix === 'gestfin') || (prefix === 'caph') || (prefix === 'merc') || (prefix === 'infra') || (prefix === 'ian')) {    
@@ -169,12 +169,16 @@ function populeMunicipioData(idMunicipio) {
             nValue = parseFloat(value).toFixed(1);
           }
 
-          console.log(nValue)
-
           if (prefix === 'cpos'){
             nValue = parseInt(nValue).toString() + '\u00BA';
           }
+
+          //indicadores com 2 casas decimais
           $('span[data-'+ name +']').html(nValue.replace(".", ","));
+
+          //inicio indicadores com 1 casa decimal (ultimo card)
+          $('span[data-i-'+ name +']').html(nValueData.replace(".", ","));
+
         } else {
           $('#' + name).html(value);
           if (name === 'munic'){
@@ -315,30 +319,30 @@ function setEstadualMapValues(municipio) {
     //  variável: pos_infra
     $('#infra-ranking')   .html(parseInt(municipio.pos_infra,).toString() + '\u00BA');
     //  variável: infra
-    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
+    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(2));
     //  variável: med_infra
-    $('#infra-media')     .html(parseFloat(municipio.med_infra,).toFixed(1));
+    $('#infra-media')     .html(parseFloat(municipio.med_infra,).toFixed(2));
 
     //  variável: pos_merc
     $('#pmercado-ranking').html(parseInt(municipio.pos_merc,).toString() + '\u00BA');
     //  variável: merc
-    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(2));
     //  variável: med_merc
-    $('#pmercado-media')  .html(parseFloat(municipio.med_merc,).toFixed(1));
+    $('#pmercado-media')  .html(parseFloat(municipio.med_merc,).toFixed(2));
 
     //  variável: pos_caph
     $('#chumano-ranking') .html(parseInt(municipio.pos_caph,).toString() + '\u00BA');
     //  variável: caph
-    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(2));
     //  variável: med_caph
-    $('#chumano-media')   .html(parseFloat(municipio.med_caph,).toFixed(1));
+    $('#chumano-media')   .html(parseFloat(municipio.med_caph,).toFixed(2));
 
     //  variável: pos_gestfin
     $('#gfiscal-ranking') .html(parseInt(municipio.pos_gestfin,).toString() + '\u00BA');
     //  variável: gestfin
-    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(2));
     //  variável: med_gestfin
-    $('#gfiscal-media')   .html(parseFloat(municipio.med_gestfin,).toFixed(1));
+    $('#gfiscal-media')   .html(parseFloat(municipio.med_gestfin,).toFixed(2));
 
     setMediaSliderRulers(
 
@@ -362,37 +366,37 @@ function setRegionalMapValues(municipio) {
   if (municipio) {
 
     //  variável: ian
-    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(2));
     //  variável: rpos_ian
     $('#ranking')         .html(parseInt(municipio.rpos_ian,));
 
     //  variável: rpos_infra
     $('#infra-ranking')   .html(parseInt(municipio.rpos_infra,).toString() + '\u00BA');
     //  variável: infra
-    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
+    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(2));
     //  variável: rmed_infra
-    $('#infra-media')     .html(parseFloat(municipio.rmed_infra,).toFixed(1));
+    $('#infra-media')     .html(parseFloat(municipio.rmed_infra,).toFixed(2));
 
     //  variável: rpos_merc
     $('#pmercado-ranking').html(parseInt(municipio.rpos_merc,).toString() + '\u00BA');
     //  variável: merc
-    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(2));
     //  variável: rmed_merc
-    $('#pmercado-media')  .html(parseFloat(municipio.rmed_merc,).toFixed(1));
+    $('#pmercado-media')  .html(parseFloat(municipio.rmed_merc,).toFixed(2));
 
     //  variável: rpos_caph
     $('#chumano-ranking') .html(parseInt(municipio.rpos_caph,).toString() + '\u00BA');
     //  variável: caph
-    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(2));
     //  variável: rmed_caph
-    $('#chumano-media')   .html(parseFloat(municipio.rmed_caph,).toFixed(1));
+    $('#chumano-media')   .html(parseFloat(municipio.rmed_caph,).toFixed(2));
 
     //  variável: rpos_gestfin
     $('#gfiscal-ranking') .html(parseInt(municipio.rpos_gestfin,).toString() + '\u00BA');
     //  variável: gestfin
-    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(2));
     //  variável: rmed_gestfin
-    $('#gfiscal-media')   .html(parseFloat(municipio.rmed_gestfin,).toFixed(1));
+    $('#gfiscal-media')   .html(parseFloat(municipio.rmed_gestfin,).toFixed(2));
 
     setMediaSliderRulers(
 
@@ -416,37 +420,37 @@ function setClusterMapValues(municipio) {
   if (municipio) {
 
     //  variável: ian
-    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(2));
     //  variável: cpos_ian
     $('#ranking')         .html(parseInt(municipio.cpos_ian,));
 
     //  variável: cpos_infra
     $('#infra-ranking')   .html(parseInt(municipio.cpos_infra,).toString() + '\u00BA');
     //  variável: infra
-    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
+    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(2));
     //  variável: cmed_infra
-    $('#infra-media')     .html(parseFloat(municipio.cmed_infra,).toFixed(1));
+    $('#infra-media')     .html(parseFloat(municipio.cmed_infra,).toFixed(2));
 
     // variável: cpos_merc
     $('#pmercado-ranking').html(parseInt(municipio.cpos_merc,).toString() + '\u00BA');
     // variável: merc
-    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(2));
     //  variável: cmed_merc
-    $('#pmercado-media')  .html(parseFloat(municipio.cmed_merc,).toFixed(1));
+    $('#pmercado-media')  .html(parseFloat(municipio.cmed_merc,).toFixed(2));
 
     // variável: cpos_caph
     $('#chumano-ranking') .html(parseInt(municipio.cpos_caph,).toString() + '\u00BA');
     // variável: caph
-    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(2));
     // variável: cmed_caph
-    $('#chumano-media')   .html(parseFloat(municipio.cmed_caph,).toFixed(1));
+    $('#chumano-media')   .html(parseFloat(municipio.cmed_caph,).toFixed(2));
 
     // variável: cpos_gestfin
     $('#gfiscal-ranking') .html(parseInt(municipio.cpos_gestfin,).toString() + '\u00BA');
     // variável: gestfin
-    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(2));
     // variável: cmed_gestfin
-    $('#gfiscal-media')   .html(parseFloat(municipio.cmed_gestfin,).toFixed(1));
+    $('#gfiscal-media')   .html(parseFloat(municipio.cmed_gestfin,).toFixed(2));
 
     setMediaSliderRulers(
 
@@ -587,7 +591,7 @@ function populateTexts(data) {
     populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
-//inicio da terceira regua
+//inicio da segunda regua
 function buildCategoriesSliderRuler(keyName) {
   var slider = document.getElementById('slider_' + keyName);
 

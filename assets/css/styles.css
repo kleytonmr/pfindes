@@ -4739,16 +4739,16 @@ a {
 .cc-box-galeria .cc-box-img-conteudo .cc-imagem .cc-pontuacao {
   background-image: url(../../assets/img//selo-gold.png);
   background-position: 10% -3%;
-  background-size: cover;
+  /*background-size: cover;*/
   background-repeat: no-repeat;
-  width: 34px;
-  height: 34px;
+  width: 39.1px;
+  height: 39.1px;
   text-align: center;
   color: #fff;
   padding: 5px;
   font-weight: 700;
   margin-left: 5px;
-  margin-right: -7px;
+  margin-right: -11px;
   margin-top: -10px;
   font-size: 17px;
   position: absolute;
@@ -4758,7 +4758,7 @@ a {
 .cc-box-galeria .cc-box-img-conteudo .cc-imagem .cc-ranking {
   background-image: url(../../assets/img//selo-blue.png);
   background-position: center;
-  background-size: cover;
+  /*background-size: cover;*/
   background-repeat: no-repeat;
   width: 39.1px;
   text-align: center;
