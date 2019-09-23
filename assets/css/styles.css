@@ -4474,7 +4474,7 @@ a {
   font-weight: 700;
   margin-left: 5px;
   font-size: 11px;
-  line-height: 31px;
+  line-height: 21px;
 }
 
 @media (min-width: 576px) {
@@ -4753,6 +4753,7 @@ a {
   font-size: 17px;
   position: absolute;
   right: 15px;
+  line-height: 29px;
 }
 
 .cc-box-galeria .cc-box-img-conteudo .cc-imagem .cc-ranking {
@@ -5903,9 +5904,9 @@ sidebar {
     height: 40%;
   }
 
-  .navbar-brand {
-    width: 60%;
-  }
+  /*.navbar-brand {
+    min-width: 60%;
+  }*/
 }
 
 
