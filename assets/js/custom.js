@@ -271,10 +271,26 @@ $(document).ready(function() {
   $(".content-carousel").click(function(){
     var descricao = $(this).closest(".cc-box-descricao");
     var resumo = descricao.find(".cc-resumo");
-    var aux = resumo.html();
-    var textoCompleto = resumo.data("carousel-content");
-    $(resumo).html(textoCompleto);
-    $(resumo).data("carousel-content", aux);
+
+    //console.log(resumo[0].id);
+
+    if(resumo.hasClass('tema_active') === true) {
+      //texto do tema esta expandido
+      resumo.removeClass('tema_active');
+      resumo[0].style.display = '-webkit-box';
+    } else {
+      //texto do tema nao esta expandido
+      resumo.addClass('tema_active');
+      resumo[0].style.display = 'block';
+    }
+    
+
+    //var aux = resumo.html();
+    //var textoCompleto = resumo.data("carousel-content");
+
+
+    //$(resumo).html(textoCompleto);
+    //$(resumo).data("carousel-content", aux);
   });
 
 

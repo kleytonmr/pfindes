@@ -5908,4 +5908,10 @@ sidebar {
   }*/
 }
 
-
+#cc-resumo-1, #cc-resumo-2, #cc-resumo-3, #cc-resumo-4, #cc-resumo-5 {
+  display: -webkit-box;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
