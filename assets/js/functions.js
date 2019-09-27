@@ -560,35 +560,35 @@ function populateTexts(data) {
     texto2.html(municipio['texto2_ian']);
 
     //att boas praticas
-    populaCarousel(vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
+    populaCarousel(session, vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
 
     //att boas praticas
-    populaCarousel(vitoria_es, cachoeiro_de_itapemirim_es, belo_horizonte_mg, curvelo_mg, parcerias_publico_privadas);
+    populaCarousel(session, vitoria_es, cachoeiro_de_itapemirim_es, belo_horizonte_mg, curvelo_mg, parcerias_publico_privadas);
   }
   if (session === 'potencial de mercado') {
     texto1.html(municipio['texto1_potencial_de_mercado']);
     texto2.html(municipio['texto2_potencial_de_mercado']);
 
     //att boas praticas
-    populaCarousel(sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
+    populaCarousel(session, sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
   }
   if (session === 'capital humano') {
     texto1.html(municipio['texto1_capital_humano']);
     texto2.html(municipio['texto2_capital_humano']);
 
     //att boas praticas
-    populaCarousel(sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
+    populaCarousel(session, sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
 
     //att boas praticas
-    populaCarousel(niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
+    populaCarousel(session, niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
 //inicio da segunda regua
@@ -1089,7 +1089,7 @@ var regulacao = {
 
 
 
-function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
+function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   
   let elemId;
 
@@ -1098,6 +1098,15 @@ function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
   document.getElementById("cc-resumo-1").innerHTML = tema_1.resumo_comp;
   //document.getElementById("cc-resumo-1").dataset.carouselContent = tema_1.resumo_comp;
   document.getElementById("carousel-img-1").style.backgroundImage = "url('"+tema_1.src+"')";
+  
+  if((session=== 'ian') && (tema_1.id === 'vitoria_es')) {
+    document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
+  } else if((session=== 'infraestrutura') && (tema_1.id === 'vitoria_es')) {
+    document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
+  }  else {
+    document.getElementById("cc-link-1").href = '#';
+  }
+  
 
   elemId = document.getElementsByClassName("desc-1");
   elemId[0].id = tema_1.id;
@@ -1134,6 +1143,12 @@ function populaCarousel(tema_1, tema_2, tema_3, tema_4, tema_5) {
   document.getElementById("cc-resumo-5").innerHTML = tema_5.resumo_comp;
   //document.getElementById("cc-resumo-5").dataset.carouselContent = tema_5.resumo_comp;
   document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
+
+  if((session=== 'infraestrutura') && (tema_5.id === 'parcerias_publico_privadas')) { 
+    document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/projetos-de-parcerias-publico-privadas-municipal-p1/';
+  } else {
+    document.getElementById("cc-link-5").href = '#';
+  }
 
   elemId = document.getElementsByClassName("desc-5");
   elemId[0].id = tema_5.id;
