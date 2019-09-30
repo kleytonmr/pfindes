@@ -889,7 +889,7 @@ if (validation()) // chama a função de validação do formulário
           getClassDocLinks[i].href = "assets/documentos/ideies-documento-relatorio-tecnico-analise-dos-resultados.pdf";
         break;
         case "doc-link-base-dados" :
-          getClassDocLinks[i].href = "assets/documentos/ideies-documento-base-de-dados.pdf";
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-base-de-dados.xlsx";
         break;
         case "doc-link-diagnostico-personalizado" :
           getClassDocLinks[i].href = "assets/documentos/ideies-documento-diagnostico-personalizado-de-"+municipio_nome+".pdf";
