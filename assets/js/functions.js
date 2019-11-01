@@ -574,14 +574,14 @@ function populateTexts(data) {
     texto2.html(municipio['texto2_potencial_de_mercado']);
 
     //att boas praticas
-    populaCarousel(session, sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
+    populaCarousel(session, sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'capital humano') {
     texto1.html(municipio['texto1_capital_humano']);
     texto2.html(municipio['texto2_capital_humano']);
 
     //att boas praticas
-    populaCarousel(session, sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
+    populaCarousel(session, sobral_ce, participacao_da_sociedade, vitoria_es, vila_pavao_es, oeiras_pi);
   }
   if (session === 'gestão fiscal') {
     texto1.html(municipio['texto1_gestao_fiscal']);
@@ -1103,7 +1103,9 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
   } else if((session=== 'infraestrutura') && (tema_1.id === 'vitoria_es')) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
-  }  else {
+  } else if((session=== 'potencial de mercado') && (tema_1.id === 'sao_paulo_sp')) {
+    document.getElementById("cc-link-1").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
+  } else {
     document.getElementById("cc-link-1").href = '#';
   }
   
@@ -1117,6 +1119,14 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
   document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
 
+  if((session=== 'infraestrutura') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
+    document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
+  } else if((session=== 'potencial de mercado') && (tema_2.id === 'fortaleza_ce')) {
+    document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
+  } else {
+    document.getElementById("cc-link-2").href = '#';
+  }
+
   elemId = document.getElementsByClassName("desc-2");
   elemId[0].id = tema_2.id;
 
@@ -1125,6 +1135,14 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo_comp;
   //document.getElementById("cc-resumo-3").dataset.carouselContent = tema_3.resumo_comp;
   document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
+
+  if((session=== 'capital humano') && (tema_3.id === 'vitoria_es')) {
+    document.getElementById("cc-link-3").href = 'http://www.blogdoideies.org.br/educ-infantil-vitoria/';
+  } else if((session=== 'gestão fiscal') && (tema_3.id === 'transparencia')) {
+    document.getElementById("cc-link-3").href = 'http://www.portaldaindustria-es.com.br/publicacao/334-transparencia-nas-contas-publicas-marco-legal-e-esforcos-para-melhorar-o-acesso-a-informacao';
+  } else {
+    document.getElementById("cc-link-3").href = '#';
+  }
 
   elemId = document.getElementsByClassName("desc-3");
   elemId[0].id = tema_3.id;
