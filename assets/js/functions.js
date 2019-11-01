@@ -1164,6 +1164,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
 
   if((session=== 'infraestrutura') && (tema_5.id === 'parcerias_publico_privadas')) { 
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/projetos-de-parcerias-publico-privadas-municipal-p1/';
+  } else if((session=== 'ian') && (tema_5.id === 'cachoeiro_de_itapemirim_es')) {
+    document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
   } else {
     document.getElementById("cc-link-5").href = '#';
   }
