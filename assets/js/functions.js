@@ -560,7 +560,7 @@ function populateTexts(data) {
     texto2.html(municipio['texto2_ian']);
 
     //att boas praticas
-    populaCarousel(session, vitoria_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj, cachoeiro_de_itapemirim_es);
+    populaCarousel(session, vitoria_es, cachoeiro_de_itapemirim_es, vila_pavao_es, juazeiro_do_norte_ce, niteroi_rj);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
@@ -574,7 +574,7 @@ function populateTexts(data) {
     texto2.html(municipio['texto2_potencial_de_mercado']);
 
     //att boas praticas
-    populaCarousel(session, sao_paulo_sp, fortaleza_ce, sao_bernardo_do_campo_sp, caruaru_pe, juazeiro_do_norte_ce);
+    populaCarousel(session, sao_paulo_sp, fortaleza_ce, recife_pe, caruaru_pe, juazeiro_do_norte_ce);
   }
   if (session === 'capital humano') {
     texto1.html(municipio['texto1_capital_humano']);
@@ -588,7 +588,7 @@ function populateTexts(data) {
     texto2.html(municipio['texto2_gestao_fiscal']);
 
     //att boas praticas
-    populaCarousel(session, niteroi_rj, sao_bernardo_do_campo_sp, transparencia, consorcios_intermunicipais, regulacao);    
+    populaCarousel(session, niteroi_rj, espirito_santo_es, transparencia, consorcios_intermunicipais, regulacao);    
   }
 }
 //inicio da segunda regua
@@ -951,6 +951,14 @@ var vitoria_es = {
   src:'assets/img/carousel-vitoria-es.jpg'
 }
 
+var espirito_santo_es = {
+  id: 'espirito_santo_es',
+  nome:'Espírito Santo',
+  resumo:'O Espírito Santo é um dos estados que melhor vem cumprindo todos os limites estabelecidos.',
+  resumo_comp:'O Espírito Santo é um dos estados que melhor vem cumprindo todos os limites estabelecidos na Lei de Responsabilidade Fiscal, tanto que na última avaliação anual do Tesouro Nacional, foi a única unidade da federação a ser avaliado com nota A.',
+  src:'assets/img/carousel-es.jpg'
+}
+
 var vila_pavao_es = {
   id: 'vila_pavao_es',
   nome:"Vila Pavão - ES",
@@ -1055,6 +1063,16 @@ var sao_bernardo_do_campo_sp = {
   src:"assets/img/carousel-sao-bernardo-do-campo-sp.jpg"
 }
 
+var recife_pe = {
+  id: 'recife_pe',
+  nome:"Recife - PE",
+  resumo:"A ação coordenada entre governo, academia e empresas transformou Recife em um hub de inovação.",
+  resumo_comp:"A ação coordenada entre governo, academia e empresas transformou Recife em um hub de inovação. O Porto Digital tem uma política de atração de recursos humanos qualificados, além de oferecer isenção fiscal para as empresas que deixam a incubadora.",
+  src:"assets/img/carousel-recife-pe.jpg"
+}
+
+
+
 var caruaru_pe = {
   id: 'caruaru_pe',
   nome:"Caruaru - PE",
@@ -1119,9 +1137,11 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
   document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
 
-  if((session=== 'infraestrutura') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
+  if((session === 'infraestrutura') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
     document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
-  } else if((session=== 'potencial de mercado') && (tema_2.id === 'fortaleza_ce')) {
+  } else if((session === 'ian') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
+    document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
+  } else if((session === 'potencial de mercado') && (tema_2.id === 'fortaleza_ce')) {
     document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
   } else {
     document.getElementById("cc-link-2").href = '#';
