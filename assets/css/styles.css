@@ -5915,3 +5915,9 @@ sidebar {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+
+.linkIsDisabled {
+    cursor: default !important;
+    opacity: 0.5;
+    pointer-events: none;
+}
