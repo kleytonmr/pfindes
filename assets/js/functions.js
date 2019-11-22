@@ -885,8 +885,8 @@ if (validation()) // chama a função de validação do formulário
         case "doc-link-referencial" :
           getClassDocLinks[i].href = "assets/documentos/ideies-documento-referencial-teorico-estatistico.pdf";
         break;
-        case "doc-link-relatorio-tecnico-analise" :
-          getClassDocLinks[i].href = "assets/documentos/ideies-documento-relatorio-tecnico-analise-dos-resultados.pdf";
+        case "doc-link-plano-melhoria" :
+          getClassDocLinks[i].href = "assets/documentos/ideies-documento-plano-melhoria-ambiente-negocios-municipios-es-fase-1-diagnostico.pdf";
         break;
         case "doc-link-base-dados" :
           getClassDocLinks[i].href = "assets/documentos/ideies-documento-base-de-dados.xlsx";
@@ -1104,8 +1104,6 @@ var regulacao = {
   resumo_comp:"A prefeitura possui competência para regular serviços de alto impacto na economia e no bem-estar da população. Uma gestão pública alinhada com boas práticas regulatórias possui a capacidade de estimular um ambiente de negócios mais favorável à atividade econômica.",
   src:"assets/img/carousel-regulacao.jpg"
 }
-
-
 
 function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   
