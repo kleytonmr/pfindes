@@ -946,8 +946,8 @@ function validation() {
 var vitoria_es = {
   id: 'vitoria_es',
   nome:'Vitória - ES',
-  resumo:'Com a finalidade de reduzir a alta taxa de homicídios, Vitória passou por uma reestruturação.',
   resumo_comp:'Com a finalidade de reduzir a alta taxa de homicídios, Vitória passou por uma reestruturação. A cidade criou um arranjo institucional que fosse capaz de coordenar os projetos de segurança pública. Além disso, obteve êxito nos programas preventivos, reduzindo a taxa de homicídios de 81 por 100 mil habitantes no início dos anos 2000 para 17 por 100 mil habitantes, em 2016.',
+  resumo_caph:'Em Vitória/ES o plano de educação infantil possui como base três ferramentas fundamentais: a participação da sociedade em conselhos escolares, a formação continuada dos profissionais e a infraestrutura das escolas. Os conselhos escolares da capital capixaba possuem uma atuação com característica deliberativa e fiscalizadora, o que promove maior participação da sociedade nas decisões dos centros infantis.',
   src:'assets/img/carousel-vitoria-es.jpg'
 }
 
@@ -1071,8 +1071,6 @@ var recife_pe = {
   src:"assets/img/carousel-recife-pe.jpg"
 }
 
-
-
 var caruaru_pe = {
   id: 'caruaru_pe',
   nome:"Caruaru - PE",
@@ -1115,6 +1113,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-1").dataset.carouselContent = tema_1.resumo_comp;
   document.getElementById("carousel-img-1").style.backgroundImage = "url('"+tema_1.src+"')";
   
+  document.getElementById("cc-link-1").classList.remove("linkIsDisabled");
+
   if((session=== 'ian') && (tema_1.id === 'vitoria_es')) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
   } else if((session=== 'infraestrutura') && (tema_1.id === 'vitoria_es')) {
@@ -1122,7 +1122,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   } else if((session=== 'potencial de mercado') && (tema_1.id === 'sao_paulo_sp')) {
     document.getElementById("cc-link-1").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
   } else {
-    document.getElementById("cc-link-1").href = '#';
+    document.getElementById("cc-link-1").classList.add("linkIsDisabled");
+    document.getElementById("cc-link-1").href = '';
   }
   
 
@@ -1135,6 +1136,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-2").dataset.carouselContent = tema_2.resumo_comp;
   document.getElementById("carousel-img-2").style.backgroundImage = "url('"+tema_2.src+"')";
 
+  document.getElementById("cc-link-2").classList.remove("linkIsDisabled");
+
   if((session === 'infraestrutura') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
     document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
   } else if((session === 'ian') && (tema_2.id === 'cachoeiro_de_itapemirim_es')) {
@@ -1142,7 +1145,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   } else if((session === 'potencial de mercado') && (tema_2.id === 'fortaleza_ce')) {
     document.getElementById("cc-link-2").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
   } else {
-    document.getElementById("cc-link-2").href = '#';
+    document.getElementById("cc-link-2").classList.add("linkIsDisabled");
+    document.getElementById("cc-link-2").href = '';
   }
 
   elemId = document.getElementsByClassName("desc-2");
@@ -1151,15 +1155,20 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //terceira cidade
   document.getElementById("cc-nome-3").innerHTML = tema_3.nome;
   document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo_comp;
-  //document.getElementById("cc-resumo-3").dataset.carouselContent = tema_3.resumo_comp;
   document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
+
+  document.getElementById("cc-link-3").classList.remove("linkIsDisabled");
 
   if((session=== 'capital humano') && (tema_3.id === 'vitoria_es')) {
     document.getElementById("cc-link-3").href = 'http://www.blogdoideies.org.br/educ-infantil-vitoria/';
+    document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo_caph;
   } else if((session=== 'gestão fiscal') && (tema_3.id === 'transparencia')) {
     document.getElementById("cc-link-3").href = 'http://www.portaldaindustria-es.com.br/publicacao/334-transparencia-nas-contas-publicas-marco-legal-e-esforcos-para-melhorar-o-acesso-a-informacao';
+  } else if((session=== 'potencial de mercado') && (tema_3.id === 'recife_pe')) {
+    document.getElementById("cc-link-3").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
   } else {
-    document.getElementById("cc-link-3").href = '#';
+    document.getElementById("cc-link-3").classList.add("linkIsDisabled");
+    document.getElementById("cc-link-3").href = '';
   }
 
   elemId = document.getElementsByClassName("desc-3");
@@ -1171,6 +1180,21 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-4").dataset.carouselContent = tema_4.resumo_comp;
   document.getElementById("carousel-img-4").style.backgroundImage = "url('"+tema_4.src+"')";
 
+  document.getElementById("cc-link-4").classList.remove("linkIsDisabled");
+
+  if((session=== 'infraestrutura') && (tema_4.id === 'curvelo_mg')) { 
+    document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/mobilidade-urbana-repensar-o-futuro-e-agora/';
+  } else if((session=== 'ian') && (tema_4.id === 'juazeiro_do_norte_ce')) { 
+    document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
+  } else if((session=== 'potencial de mercado') && (tema_4.id === 'caruaru_pe')) { 
+    document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
+  } else {
+    document.getElementById("cc-link-4").classList.add("linkIsDisabled");
+    document.getElementById("cc-link-4").href = '';
+  }
+
+  
+
   elemId = document.getElementsByClassName("desc-4");
   elemId[0].id = tema_4.id;
 
@@ -1180,12 +1204,17 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   //document.getElementById("cc-resumo-5").dataset.carouselContent = tema_5.resumo_comp;
   document.getElementById("carousel-img-5").style.backgroundImage = "url('"+tema_5.src+"')";
 
+  document.getElementById("cc-link-5").classList.remove("linkIsDisabled");
+
   if((session=== 'infraestrutura') && (tema_5.id === 'parcerias_publico_privadas')) { 
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/projetos-de-parcerias-publico-privadas-municipal-p1/';
   } else if((session=== 'ian') && (tema_5.id === 'cachoeiro_de_itapemirim_es')) {
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
+  } else if((session=== 'potencial de mercado') && (tema_5.id === 'juazeiro_do_norte_ce')) { 
+    document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
   } else {
-    document.getElementById("cc-link-5").href = '#';
+    document.getElementById("cc-link-5").classList.add("linkIsDisabled");
+    document.getElementById("cc-link-5").href = '';
   }
 
   elemId = document.getElementsByClassName("desc-5");
