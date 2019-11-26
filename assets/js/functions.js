@@ -1076,8 +1076,7 @@ var caruaru_pe = {
   nome:"Caruaru - PE",
   resumo:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE.",
   resumo_comp:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE. A unidade possui infraestrutura necessária para auxiliar empreendedores no desenvolvimento de suas ideias. Em 2016 foi considerado como uma das 10 soluções mais inovadoras do mundo, segundo a IASP (Associação Internacional de Parques Tecnológicos e Áreas de Inovação).",
-  src:"assets/img/carousel-caruaru-pe.jpg",
-  src_potencial_mercado:"assets/img/carousel-caruaru-pe-potencial-mercado.jpg"
+  src:"assets/img/carousel-caruaru-pe-potencial-mercado.jpg"
 }
 
 var transparencia = {
@@ -1189,7 +1188,6 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
   } else if((session=== 'potencial de mercado') && (tema_4.id === 'caruaru_pe')) { 
     document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
-    document.getElementById("carousel-img-4").style.backgroundImage = "url('"+tema_4.src_potencial_mercado+"')";
 } else {
     document.getElementById("cc-link-4").classList.add("linkIsDisabled");
     document.getElementById("cc-link-4").href = '';
