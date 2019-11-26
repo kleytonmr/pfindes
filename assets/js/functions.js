@@ -1076,7 +1076,7 @@ var caruaru_pe = {
   nome:"Caruaru - PE",
   resumo:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE.",
   resumo_comp:"O Porto Digital em parceria com o Governo de Pernambuco instalou o “Armazém da Criatividade”, em Caruaru/PE. A unidade possui infraestrutura necessária para auxiliar empreendedores no desenvolvimento de suas ideias. Em 2016 foi considerado como uma das 10 soluções mais inovadoras do mundo, segundo a IASP (Associação Internacional de Parques Tecnológicos e Áreas de Inovação).",
-  src:"assets/img/carousel-caruaru-pe-potencial-mercado.jpg"
+  src:"assets/img/carousel-caruaru-pe.jpg"
 }
 
 var transparencia = {
