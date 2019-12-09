@@ -1121,12 +1121,14 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
   } else if((session=== 'potencial de mercado') && (tema_1.id === 'sao_paulo_sp')) {
     document.getElementById("cc-link-1").href = 'http://www.blogdoideies.org.br/mapa-para-simplificacao-endeavor-mostra-o-caminho-para-cidades-mais-inteligentes/';
+  } else if((session=== 'gestão fiscal') && (tema_1.id === 'niteroi_rj')) {
+    document.getElementById("cc-link-1").href = 'http://www.blogdoideies.org.br/pacto-federativo-e-gestao-fiscal-desafios-dos-municipios-brasileiros/';
   } else {
     document.getElementById("cc-link-1").classList.add("linkIsDisabled");
     document.getElementById("cc-link-1").href = '';
   }
   
-
+  
   elemId = document.getElementsByClassName("desc-1");
   elemId[0].id = tema_1.id;
 
