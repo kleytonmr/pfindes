@@ -556,7 +556,7 @@ function populateTexts(data) {
 
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
-    texto1.html(municipio['texto1_ian']);    
+    texto1.html(municipio['texto1_ian']);
     texto2.html(municipio['texto2_ian']);
 
     //att boas praticas
@@ -1117,6 +1117,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
 
   if((session=== 'ian') && (tema_1.id === 'vitoria_es')) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
+  } else if((session=== 'capital humano') && (tema_1.id === 'sobral_ce')) {
+    document.getElementById("cc-link-1").href = 'http://www.blogdoideies.org.br/o-ideb-e-a-educacao-para-o-desenvolvimento/';
   } else if((session=== 'infraestrutura') && (tema_1.id === 'vitoria_es')) {
     document.getElementById("cc-link-1").href = 'http://www.portaldaindustria-es.com.br/publicacao/315-seguranca-publica-o-que-podemos-aprender-com-vitoria-e-diadema';
   } else if((session=== 'potencial de mercado') && (tema_1.id === 'sao_paulo_sp')) {
@@ -1160,8 +1162,10 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
   document.getElementById("carousel-img-3").style.backgroundImage = "url('"+tema_3.src+"')";
 
   document.getElementById("cc-link-3").classList.remove("linkIsDisabled");
-
-  if((session=== 'capital humano') && (tema_3.id === 'vitoria_es')) {
+  
+  if((session=== 'ian') && (tema_3.id === 'vila_pavao_es')) {
+    document.getElementById("cc-link-3").href = 'http://www.blogdoideies.org.br/o-ideb-e-a-educacao-para-o-desenvolvimento/';
+  } else if((session=== 'capital humano') && (tema_3.id === 'vitoria_es')) {
     document.getElementById("cc-link-3").href = 'http://www.blogdoideies.org.br/educ-infantil-vitoria/';
     document.getElementById("cc-resumo-3").innerHTML = tema_3.resumo_caph;
   } else if((session=== 'gestão fiscal') && (tema_3.id === 'transparencia')) {
@@ -1188,6 +1192,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/mobilidade-urbana-repensar-o-futuro-e-agora/';
   } else if((session=== 'ian') && (tema_4.id === 'juazeiro_do_norte_ce')) { 
     document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
+  } else if((session=== 'capital humano') && (tema_4.id === 'vila_pavao_es')) {
+    document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/o-ideb-e-a-educacao-para-o-desenvolvimento/';
   } else if((session=== 'potencial de mercado') && (tema_4.id === 'caruaru_pe')) { 
     document.getElementById("cc-link-4").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
 } else {
@@ -1212,6 +1218,8 @@ function populaCarousel(session, tema_1, tema_2, tema_3, tema_4, tema_5) {
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/projetos-de-parcerias-publico-privadas-municipal-p1/';
   } else if((session=== 'ian') && (tema_5.id === 'cachoeiro_de_itapemirim_es')) {
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/universalizacao-do-saneamento-basico-uma-meta-possivel/';
+  } else if((session=== 'capital humano') && (tema_5.id === 'oeiras_pi')) {
+    document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/o-ideb-e-a-educacao-para-o-desenvolvimento/';
   } else if((session=== 'potencial de mercado') && (tema_5.id === 'juazeiro_do_norte_ce')) { 
     document.getElementById("cc-link-5").href = 'http://www.blogdoideies.org.br/quem-e-que-faz-uma-cidade-inovadora/';
   } else {
